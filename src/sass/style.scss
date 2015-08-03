@@ -1,0 +1,33 @@
+$white: #fff;
+$black: #000;
+$yellow: #ecc02d;
+
+@import "gui/fonts";
+@import "gui/mixin";
+@import "gui/normalize";
+
+@import "gui/gui";
+
+@import "screen_01";
+@import "screen_03";
+@import "jqueryfullPage";
+@import "slick.scss";
+
+#header{
+	position:fixed;
+	height: 50px;
+	display:block;
+	width: 100%; 
+	top:0px;
+	z-index:9;
+	padding: 10px 0 0 0;
+}
+.b-logo__pic{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 75px;
+	height: 75px;
+	display: inline-block;
+	background: transparent url('../ico/logo.png') 50% 50% no-repeat;
+}

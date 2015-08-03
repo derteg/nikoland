@@ -1,0 +1,44 @@
+.screen_01{
+	overflow: hidden;
+}
+
+.fullscreen-bg__video{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000 url('../pic/video_01.jpg') center no-repeat;
+	background-size: contain;
+	object-fit: cover;
+	z-index:3;
+}
+
+.b-promo_center{
+	position: absolute;
+	z-index: 4;
+	width: 100%;
+	left: 0;
+	top: 43%;
+} 
+.b-header__title{
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	.title_big{
+		font: 2.5em $bebasBold;
+	}
+	.title_middle{
+		font: 0.9375em $bebasRegular
+	}
+	.title_min{
+		font: 0.8333333333333334em $bebasRegular;
+	}
+}
+
+.b-promo__col .num{
+	font-size: 4.5em;
+	color: $yellow;
+}
