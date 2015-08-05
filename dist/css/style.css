@@ -393,8 +393,41 @@ th {
     opacity: 0.5; }
   100% {
     opacity: 0; } }
+@-webkit-keyframes loadWidth {
+  0% {
+    width: 0; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 100%; } }
+@-moz-keyframes loadWidth {
+  0% {
+    width: 0; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 100%; } }
+@-o-keyframes loadWidth {
+  0% {
+    width: 0; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 100%; } }
+@keyframes loadWidth {
+  0% {
+    width: 0; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 100%; } }
 body {
-  font-size: 16px; }
+  font-size: 16px;
+  font-family: "bebas_neuebold", sans-serif; }
+
+p {
+  padding: 0;
+  margin: 0; }
 
 .cols {
   position: relative;
@@ -409,8 +442,35 @@ body {
   *display: inline;
   position: relative; }
 
+.col__25 {
+  width: 25%; }
+
 .col__33 {
   width: 33.3%; }
+
+.col__50 {
+  width: 50%; }
+
+.col__75 {
+  width: 75%; }
+
+/* Clearfix */
+.clearfix, .wrapper, .wrapper-contacts {
+  *zoom: 1; }
+
+.clearfix:before, .clearfix:after, .wrapper:before, .wrapper:after, .wrapper-contacts:before, .wrapper-contacts:after {
+  content: '';
+  display: table; }
+
+.clearfix:after, .wrapper:after, .wrapper-contacts:after {
+  clear: both; }
+
+/* /Clearfix */
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
 
 .screen_01 {
   overflow: hidden; }
@@ -469,22 +529,31 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#071021', endColorstr='#1c2c45',GradientType=0 );
   /* IE6-8 */ }
 
+.b-promo__carousel.slick-slider {
+  position: static; }
 .b-promo__carousel .slick-arrow {
   background: transparent url("../ico/sprite_01.png") no-repeat;
   width: 50px;
   height: 75px;
   position: absolute;
   right: 140px;
-  bottom: 100%;
+  top: 10px;
   padding: 0;
   border: none;
   outline: none;
+  opacity: 0.5;
+  -moz-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
   text-indent: -9999px;
   overflow: hidden;
   text-decoration: none;
   display: block;
   font-size: 0;
   text-align: start; }
+  .b-promo__carousel .slick-arrow:hover {
+    opacity: 1; }
   .b-promo__carousel .slick-arrow.slick-prev {
     margin-right: 50px;
     background-position: 14px 100%; }
@@ -494,12 +563,16 @@ body {
   outline: none; }
 
 .b-promo__slide {
-  max-width: 640px;
-  max-height: 640px; }
+  max-width: 750px;
+  max-height: 750px; }
 
 .b-promo__slide-lnk {
   position: relative;
-  display: block; }
+  display: block;
+  outline: none; }
+  .b-promo__slide-lnk .b-pic-bg__cont {
+    width: 100%;
+    height: 100%; }
   .b-promo__slide-lnk .l-pic-bg {
     width: 100%;
     height: auto; }
@@ -512,7 +585,13 @@ body {
   .b-promo__slide-lnk .l-title {
     position: absolute;
     bottom: 20px;
-    left: 20px; }
+    left: 20px;
+    font-size: 3.125em;
+    line-height: 1em;
+    color: #fff;
+    width: 70%;
+    max-width: 500px;
+    text-transform: uppercase; }
 
 /**
  * fullPage 2.6.6
@@ -786,12 +865,10 @@ html.fp-enabled,
 
 #header {
   position: fixed;
-  height: 50px;
-  display: block;
+  height: 1px;
   width: 100%;
   top: 0px;
-  z-index: 9;
-  padding: 10px 0 0 0; }
+  z-index: 10; }
 
 .b-logo__pic {
   position: absolute;
@@ -803,27 +880,27 @@ html.fp-enabled,
   background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAnCAYAAAAYRfjHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowQTUwOUNEQzgxRTcxMUU0OEZFQ0Y4NDA3NkIyMzFBRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowQTUwOUNERDgxRTcxMUU0OEZFQ0Y4NDA3NkIyMzFBRCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ4MThCRUZGODFFNjExRTQ4RkVDRjg0MDc2QjIzMUFEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQ4MThCRjAwODFFNjExRTQ4RkVDRjg0MDc2QjIzMUFEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+eLRehgAAA1NJREFUeNq82FtIFFEYB/DRtrYWZUmMekg3sQtlC14IfOilop6CMESKpKLILtRDRQ8RPRVoPUWWFVhED9FDBGVaFqRQVBaKFpHkkpXdrNQ281at2//L/8BpmFlmL7MHfjpz5sx8O2fO+ebsauFwuB+qwQ1assif1vBEkf+5yQqcqmnaNW2ieKENyrRkFERfyDteAxe5fRamOt3VohNOcXszDEE7zHc6cCV8gBTuL4Ln8BPKnQy8hF1crBycBrWsr+V+wgPLnb6DYyaNNsAwBCEv0YE1zuUui4b3eedDHAMJDbyMF/ebNPwIXzjapVyCtEQFngRf4bBJw1/wgNul7PZOiw9pO4HoJQQ3YK1hqmfCZCYXKVehEIbgCVTEmkBUq9mVOUrdRiXBqG0lt5/gsSuQHmtX6xcbhP1K3Xle3GNxkRIIwTi8ZuJ5BM1wC9pgQaSuljIG9VCi1OXDKAybdFgaVIFcJwVmwB1ogW74AQXQBLMjdbVYx08/i/t90G3SLoevVCkn4QK3DxravWQeCMAcq67W+KzGYAf3pRsbDW2Ws40c26bUy5T7Az6l7hxT7yt4D3OtAos6uA3zeBdHlGO72COjsNRwXj6PBZS6Cl6jBkb04FaBt8JvOMST9ABnuP8NsizOrWabSialz/Cd9NJjFTiT3fiGd+BS0uYLG+/qHp4X4sjOYL2P03JTpJObGEiez1tuX7c5T7cob7VUO/NYtSf8fzlqM6iH8/lmNAlElc2A0mXro8hKVXyL+WINLB4zeLPNNZifg/JAtCnTTD2D93LQWbWTZ/kQnnEwxhW4kAmhkV0ejDCNtrNNcSwvCeP7WRb5T7ldzukhSaDA0HYmDDBJaPEG3se7zVfqVvIZihVK/WX4BN54A/s4f4+bHCviXYc42ldxDJTF8z7WNXAueiJ8sEE+0162j2rp828Bbyg7oQYaoAumUxZ4IB0ywK2/WSGX71/bxSxwByyGEZKX+RQYhzrogX7ogwEeb413zSVOM3Go3zLkee524puEai9XHRoTgayhWqySfaxcJp0Q4DP0cumaB0Xs6oR+PzbK4/Qo5Vqpyolvi2aDy81BFeQg8lusMOMqZl09xpGbzZ8lhp34JcJlUd8O9+CuUz+B/BVgAFsAZi5LRKDzAAAAAElFTkSuQmCC") 50% 50% no-repeat; }
 
 #preloader {
-  background-color: #182327;
+  background-color: #000;
   bottom: 0;
   left: 0;
   position: fixed;
   right: 0;
   top: 0;
   z-index: 9999999; }
+  #preloader .progress-bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 8px; }
+  #preloader .progress-bar_bg {
+    background-color: #ecc02d;
+    width: 0;
+    height: 8px; }
 
 #loading-animation {
-  background-image: url("../ico/preload_svg.svg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 80%;
-  height: 200px;
-  left: 50%;
-  margin: -100px 0 0 -100px;
-  position: absolute;
-  top: 50%;
-  width: 200px;
-  -webkit-animation: fadeinout 1.5s linear infinite;
-  -moz-animation: fadeinout 1.5s linear infinite;
-  animation: fadeinout 1.5s linear infinite; }
+  -webkit-animation: loadWidth 1.5s linear infinite;
+  -moz-animation: loadWidth 1.5s linear infinite;
+  animation: loadWidth 1.5s linear infinite; }
 
 /*# sourceMappingURL=style.css.map */

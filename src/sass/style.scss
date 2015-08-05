@@ -4,27 +4,24 @@ $yellow: #ecc02d;
 
 $sprite01: url('../ico/sprite_01.png');
 
-@import "gui/fonts";
+@import "gui/fonts"; 
 @import "gui/mixin";
 @import "gui/normalize";
-@import "gui/animate.scss";
-
+@import "gui/animate";
 @import "gui/gui";
 
 @import "screen_01";
 @import "screen_02";
 @import "screen_03";
 @import "jqueryfullPage";
-@import "slick.scss";
+@import "slick";
 
 #header{
-	position:fixed;
-	height: 50px;
-	display:block;
-	width: 100%; 
-	top:0px;
-	z-index:9;
-	padding: 10px 0 0 0;
+	position: fixed;
+	height: 1px;
+	width: 100%;
+	top: 0px;
+	z-index: 10;
 }
 .b-logo__pic{
 	position: absolute;
@@ -37,26 +34,28 @@ $sprite01: url('../ico/sprite_01.png');
 }
 
 #preloader{
-	background-color: #182327;
+	background-color: #000;
 	bottom: 0;
 	left: 0;
 	position: fixed;
 	right: 0;
 	top: 0;
 	z-index: 9999999;
+	.progress-bar{
+		position: absolute;
+		top: 50%;
+		left:0;
+		width: 100%;
+		height: 8px;
+	}
+	.progress-bar_bg{
+		background-color: $yellow;
+		width: 0;
+		height: 8px;
+	}
 }
 #loading-animation{
-	background-image: url("../ico/preload_svg.svg");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: 80%;
-	height: 200px;
-	left: 50%;
-	margin: -100px 0 0 -100px;
-	position: absolute;
-	top: 50%;
-	width: 200px;
-	-webkit-animation: fadeinout 1.5s linear infinite;
-	-moz-animation: fadeinout 1.5s linear infinite;
-	animation: fadeinout 1.5s linear infinite;
+	-webkit-animation: loadWidth 1.5s linear infinite;
+	-moz-animation: loadWidth 1.5s linear infinite;
+	animation: loadWidth 1.5s linear infinite;
 }

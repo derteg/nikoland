@@ -1,7 +1,8 @@
 // $('HTML').addClass('JS');
 
 $(function (){
-	var interactBG = $("#interactBG");
+	var interactBG = $("#interactBG"),
+		$promoSlider = $('#promoSlider');
 
 	$('#fullpage').fullpage({
 		verticalCentered: true,
@@ -13,16 +14,30 @@ $(function (){
 			$('#bgvid').get(0).play();
 
 			$('#promoSlider').slick({
-				centerMode: true,
 				centerPadding: '60px',
 				infinite: false,
 				slidesToShow: 3,
-				slidesToScroll: 1
+				centerMode: true,
+				slidesToScroll: 1,
+				responsive: [
+					{
+					breakpoint: 1281,
+						settings: {
+							slidesToShow: 2
+						}
+					},
+					{
+					breakpoint: 600,
+						settings: {
+							slidesToShow: 1
+						}
+					}					
+					]
 			});
 
 			$("#interactBG").interactive_bg({
-				strength: 100,
-				scale: 1.05,
+				strength: 25,
+				scale: 1.07,
 				animationSpeed: "400ms"
 			});
 		},
@@ -42,8 +57,8 @@ $(function (){
 (function($){
   
   var defaults = {
-	strength: 25,
-	scale: 1.05,
+	strength: 50,
+	scale: 1.07,
 	animationSpeed: "100ms",
 	contain: true,
 	wrapContent: false

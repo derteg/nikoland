@@ -12,17 +12,25 @@
 
 
 .b-promo__carousel{
+	&.slick-slider{
+		position: static;
+	}
 	.slick-arrow{
 		background: transparent $sprite01 no-repeat;
 		width: 50px;
 		height: 75px;
 		position: absolute;	
 		right: 140px;
-		bottom: 100%;
+		top: 10px;
 		padding: 0;
 		border: none;
 		outline: none;
+		opacity: 0.5;
+		@include transition(opacity .25s);
 		@include linkTextOffscreen;
+		&:hover{
+			opacity: 1;
+		}
 		&.slick-prev{
 			margin-right: 50px;
 			background-position: 14px 100%;
@@ -36,12 +44,21 @@
 	}
 }
 .b-promo__slide{
-	max-width: 640px;
-	max-height: 640px;
+	max-width: 750px;
+	max-height: 750px;
 }
 .b-promo__slide-lnk{
 	position: relative;
 	display: block;
+	outline: none;
+	.b-pic-bg__cont{
+		width: 100%;
+		height: 100%;
+	}
+	&:hover{
+		.b-pic-bg__cont{
+		}
+	}
 	.l-pic-bg{
 		width: 100%;
 		height: auto;
@@ -57,5 +74,22 @@
 		position: absolute;
 		bottom: 20px;
 		left: 20px;
+		font-size: 3.125em;
+		line-height: 1em;
+		color: $white;
+		width: 70%;
+		max-width: 500px;
+		text-transform: uppercase;
 	}
 }
+
+
+
+// @media (max-width: 1280px){
+// 	.b-promo__slide-lnk{
+// 		.l-pic-bg{
+// 			width: 100%;
+// 			height: 600px;
+// 		}
+// 	}	
+// }
