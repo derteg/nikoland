@@ -1,0 +1,61 @@
+.screen_02{
+	background: #071021; /* Old browsers */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iIzA3MTAyMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxYzJjNDUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #071021 1%, #1c2c45 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#071021), color-stop(100%,#1c2c45)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #071021 1%,#1c2c45 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #071021 1%,#1c2c45 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #071021 1%,#1c2c45 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #071021 1%,#1c2c45 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#071021', endColorstr='#1c2c45',GradientType=0 ); /* IE6-8 */
+}
+
+
+.b-promo__carousel{
+	.slick-arrow{
+		background: transparent $sprite01 no-repeat;
+		width: 50px;
+		height: 75px;
+		position: absolute;	
+		right: 140px;
+		bottom: 100%;
+		padding: 0;
+		border: none;
+		outline: none;
+		@include linkTextOffscreen;
+		&.slick-prev{
+			margin-right: 50px;
+			background-position: 14px 100%;
+		}
+		&.slick-next{
+			background-position: -38px 100%;
+		}
+	}
+	.slick-slide{
+		outline: none;
+	}
+}
+.b-promo__slide{
+	max-width: 640px;
+	max-height: 640px;
+}
+.b-promo__slide-lnk{
+	position: relative;
+	display: block;
+	.l-pic-bg{
+		width: 100%;
+		height: auto;
+	}
+	.l-logo{
+		width: 100%;
+		height: auto;
+		position: absolute;
+		top: 20px;
+		left: 20px;
+	}
+	.l-title{
+		position: absolute;
+		bottom: 20px;
+		left: 20px;
+	}
+}
