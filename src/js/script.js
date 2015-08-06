@@ -13,17 +13,30 @@ $(function (){
 		afterRender: function(){
 			$('#bgvid').get(0).play();
 
+			function picsSetHW(){
+				var $that = $(this),
+					$slideW = $('.slick-slide', $that).width(),
+					$picCont = $('.b-pic-bg__cont', $that),
+					$linkCont = $('.js-promo__slide-lnk', $that);
+
+					$linkCont.height($slideW).width($slideW);
+					$picCont.height($slideW).width($slideW);
+			}
+
+			$('#promoSlider').on('init', picsSetHW);
+
 			$('#promoSlider').slick({
-				centerPadding: '60px',
 				infinite: false,
 				slidesToShow: 3,
-				centerMode: true,
 				slidesToScroll: 1,
+				focusOnSelect: true,
+				cssEase: 'cubic-bezier(0.455, 0.03, 0.515, 0.955)',
 				responsive: [
 					{
 					breakpoint: 1281,
 						settings: {
-							slidesToShow: 2
+							slidesToShow: 2,
+							centerMode: false
 						}
 					},
 					{
@@ -35,9 +48,11 @@ $(function (){
 					]
 			});
 
+			$('#promoSlider').on('setPosition', picsSetHW);
+
 			$("#interactBG").interactive_bg({
-				strength: 25,
-				scale: 1.07,
+				strength: 50,
+				scale: 1.08,
 				animationSpeed: "400ms"
 			});
 		},

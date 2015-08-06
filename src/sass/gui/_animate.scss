@@ -18,25 +18,3 @@
   50%   { opacity: 0.5; }
   100% { opacity: 0; }
 }
-
-
-@-webkit-keyframes loadWidth {
-  0%   { width: 0; }
-  50%   { width: 50%; }
-  100% { width: 100%; }
-}
-@-moz-keyframes loadWidth {
-  0%   { width: 0; }
-  50%   { width: 50%; }
-  100% { width: 100%; }
-}
-@-o-keyframes loadWidth {
-  0%   { width: 0; }
-  50%   { width: 50%; }
-  100% { width: 100%; }
-}
-@keyframes loadWidth {
-  0%   { width: 0; }
-  50%   { width: 50%; }
-  100% { width: 100%; }
-}
