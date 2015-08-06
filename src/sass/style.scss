@@ -16,6 +16,8 @@ $sprite01: url('../ico/sprite_01.png');
 @import "jqueryfullPage";
 @import "slick";
 
+@import "gui/pace";
+
 #header{
 	position: fixed;
 	height: 1px;
@@ -53,9 +55,4 @@ $sprite01: url('../ico/sprite_01.png');
 		width: 0;
 		height: 8px;
 	}
-}
-#loading-animation{
-	-webkit-animation: loadWidth 1.5s linear infinite;
-	-moz-animation: loadWidth 1.5s linear infinite;
-	animation: loadWidth 1.5s linear infinite;
 }
