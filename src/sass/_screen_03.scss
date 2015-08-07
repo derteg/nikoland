@@ -7,8 +7,8 @@
 	left: 0;
 	width: 110%;
 	height: 110%;
-	-webkit-transform: translate3d(0, 0, 0) scale(1.1);
-	transform: translate3d(0, 0, 0) scale(1.1);
+	-webkit-transform: translate3d(-70px, 0, 0) scale(1.1);
+	transform: translate3d(-70px, 0, 0) scale(1.1);
 	@include transition (transform 2s ease(out-quad));
 }
 
@@ -19,19 +19,89 @@
 	position: relative;
 	display: none;
 	.l-sub-title{
-		font-size: 30px;
-		letter-spacing: 5px;
+		font-size: 24px;
+		letter-spacing: 7px;
+		margin-bottom: 14px;
 		font-family: $bebasRegular;
 	}
 	.l-phone{
 		margin: 10px 0;
 		font-size: 60px;
 		color: #fff;
+		font-family: $bebasBold;
+		letter-spacing: 6px;
+		word-spacing: -6px;
 	}
 	.l-mail a{
-		font-size: 40px;
-		letter-spacing: 5px;
+		font-size: 36px;
+		letter-spacing: 4px;
 		color: #fff;
-		font-family: $bebasRegular;
+		font-family: $bebasRegular;		
 	}
 }
+
+.b-form-call{
+	width: 55%;
+	margin: 40px auto 0;
+}
+.b-form-call__toggle{
+	display: none;
+}
+.b-form-call__row{
+	margin-left: -10px;
+	margin-right: -10px;
+	margin:0 -10px 20px -10px;
+	line-height: 0;
+	font-size: 0;
+}
+.b-form-call__cell{
+	width: 33.3%;
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: top;
+	position: relative;
+}
+.b-form-call__wrap{
+	margin: 0 10px;
+}
+.l-form-call__inp,
+.l-form-call_txtar{
+	width: 100%;
+	height: 50px;
+	border: 1px solid $white;
+	outline: none;
+	color: $white;
+	text-transform: uppercase;
+	line-height: 50px;
+	font-size: 30px;
+	padding: 2px 16px;
+	background-color: transparent;
+	box-sizing: border-box;
+	@include transition(background-color .25s);
+	&:focus{
+		background-color: rgba(0,0,0,0.3);
+	}
+}
+.l-form-call_txtar{
+	height: 94px;
+}
+.l-form-call__btn{
+	width: 100%;
+	height: 40px;
+	border: none;
+	outline: none;
+	color: $black;
+	text-transform: uppercase;
+	background-color: #fff;
+	font-size: 24px;
+	box-sizing: border-box;
+	@include transition(background-color .25s);
+	&:focus{
+		background-color: rgba(255,255,255,0.7);
+	}
+}
+
+::-webkit-input-placeholder {color:$white;}
+::-moz-placeholder          {color:$white;}/* Firefox 19+ */
+:-moz-placeholder           {color:$white;}/* Firefox 18- */
+:-ms-input-placeholder      {color:$white;}

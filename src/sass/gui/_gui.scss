@@ -1,36 +1,30 @@
 body{
 	font-size: 16px;
-  font-family: $bebasBold;
+  font-family: $bebasRegular;
 }
 p,h1,h2,h3,h4,h5,h6,ul,li{
   padding: 0;
   margin: 0;
 }
+a{text-decoration: none;color: $white;}
 
 .cols {
   position: relative;
-  font-size: 0;
-  line-height: 0;
+  @include clearfix();
 }
-.col {
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: top;
-  *zoom: 1;
-  *display: inline;
-  position: relative;
+.col--25,
+.col--33,
+.col--50{  
+  float: left;
 }
-.col__25{
+.col--25{
   width: 25%;
 }
-.col__33{
+.col--33{
   width: 33.3%;
 }
-.col__50{
+.col--50{
 	width: 50%;
-}
-.col__75{
-  width: 75%;
 }
 
 
@@ -51,4 +45,19 @@ p,h1,h2,h3,h4,h5,h6,ul,li{
 }
 .fr{
   float: right;
+}
+
+
+.lnk_brd.white{
+  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  @include transition(border-botom .25s);
+  &:hover{
+    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid rgba(255,255,255,0.8);
+  }
+  &:focus{
+    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid rgba(255,255,255,0);
+  }
 }

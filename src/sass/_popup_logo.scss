@@ -1,0 +1,123 @@
+.b-logo{
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	&.active{
+		.b-logo__popup{
+			opacity: 1;
+			left: 20px;
+			.b-closer .l-first{
+				-webkit-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+			.b-closer .l-second{
+				-webkit-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+			.b-logo__pic{
+				opacity: 0;
+			}
+		}
+	}
+}
+.b-logo__pic{
+	display: inline-block;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAnCAYAAAAYRfjHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowQTUwOUNEQzgxRTcxMUU0OEZFQ0Y4NDA3NkIyMzFBRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowQTUwOUNERDgxRTcxMUU0OEZFQ0Y4NDA3NkIyMzFBRCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ4MThCRUZGODFFNjExRTQ4RkVDRjg0MDc2QjIzMUFEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQ4MThCRjAwODFFNjExRTQ4RkVDRjg0MDc2QjIzMUFEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+eLRehgAAA1NJREFUeNq82FtIFFEYB/DRtrYWZUmMekg3sQtlC14IfOilop6CMESKpKLILtRDRQ8RPRVoPUWWFVhED9FDBGVaFqRQVBaKFpHkkpXdrNQ281at2//L/8BpmFlmL7MHfjpz5sx8O2fO+ebsauFwuB+qwQ1assif1vBEkf+5yQqcqmnaNW2ieKENyrRkFERfyDteAxe5fRamOt3VohNOcXszDEE7zHc6cCV8gBTuL4Ln8BPKnQy8hF1crBycBrWsr+V+wgPLnb6DYyaNNsAwBCEv0YE1zuUui4b3eedDHAMJDbyMF/ebNPwIXzjapVyCtEQFngRf4bBJw1/wgNul7PZOiw9pO4HoJQQ3YK1hqmfCZCYXKVehEIbgCVTEmkBUq9mVOUrdRiXBqG0lt5/gsSuQHmtX6xcbhP1K3Xle3GNxkRIIwTi8ZuJ5BM1wC9pgQaSuljIG9VCi1OXDKAybdFgaVIFcJwVmwB1ogW74AQXQBLMjdbVYx08/i/t90G3SLoevVCkn4QK3DxravWQeCMAcq67W+KzGYAf3pRsbDW2Ws40c26bUy5T7Az6l7hxT7yt4D3OtAos6uA3zeBdHlGO72COjsNRwXj6PBZS6Cl6jBkb04FaBt8JvOMST9ABnuP8NsizOrWabSialz/Cd9NJjFTiT3fiGd+BS0uYLG+/qHp4X4sjOYL2P03JTpJObGEiez1tuX7c5T7cob7VUO/NYtSf8fzlqM6iH8/lmNAlElc2A0mXro8hKVXyL+WINLB4zeLPNNZifg/JAtCnTTD2D93LQWbWTZ/kQnnEwxhW4kAmhkV0ejDCNtrNNcSwvCeP7WRb5T7ldzukhSaDA0HYmDDBJaPEG3se7zVfqVvIZihVK/WX4BN54A/s4f4+bHCviXYc42ldxDJTF8z7WNXAueiJ8sEE+0162j2rp828Bbyg7oQYaoAumUxZ4IB0ywK2/WSGX71/bxSxwByyGEZKX+RQYhzrogX7ogwEeb413zSVOM3Go3zLkee524puEai9XHRoTgayhWqySfaxcJp0Q4DP0cumaB0Xs6oR+PzbK4/Qo5Vqpyolvi2aDy81BFeQg8lusMOMqZl09xpGbzZ8lhp34JcJlUd8O9+CuUz+B/BVgAFsAZi5LRKDzAAAAAElFTkSuQmCC') 50% 50% no-repeat;
+	background-color: #000;
+	background-color: rgba(0,0,0,0.6);
+	width: 75px;
+	height: 75px;
+	cursor: pointer;
+	opacity: 1;
+	left: 20px;
+	top: 10px;
+	position: absolute;
+	@include transition(background-color .25s);
+	&:hover{
+		background-color: #000;
+		background-color: rgba(0,0,0,1);
+	}
+}
+
+.b-logo__popup{
+	color: $white;
+	background-color: $black;
+	width: 310px;
+	height: 445px;
+	position: fixed;	
+	left: -330px;
+	top: 0;
+	text-align: center;
+	padding: 42px 0;
+	opacity: 0;
+	@include box-sizing(border-box);
+	@include transition(left .75s, opacity 1s);
+	.b-closer{
+		position: absolute;
+		left: 0px;
+		top: 8px;
+		width: 75px;
+		height: 75px;
+		cursor: pointer;
+		.b-closer__wrap{
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -10px;
+			margin-top: -10px;
+			line-height: 0;
+			font-size: 0;
+		}
+		span{
+			width: 1px;
+			height: 23px;
+			background-color: $white;
+			display: inline-block;
+			position: absolute;
+			left: 50%;
+			top:0;
+		}
+		.l-first{
+			-webkit-transform: rotate(0);
+			transform: rotate(0);
+			@include transition(transform .25s .5s);
+		}
+		.l-second{
+			-webkit-transform: rotate(0);
+			transform: rotate(0);
+			@include transition(transform .25s .5s);
+		}
+	}
+}
+
+.b-logo__popup-pic{
+	margin-bottom: 14px;
+}
+.b-logo__content{
+	p{
+		font-size: 24px;
+		line-height: 28px;
+		letter-spacing: 2px;
+		margin-bottom: 10px;
+	}
+	.l-sub-title{
+		margin-bottom: 16px;
+	}
+	.l-text{
+		margin-bottom: 16px;
+	}
+	.l-phone{
+		font-size: 32px;
+	}
+	.l-mail{
+		color: $white;
+	}
+}
+
+.b-header__awards{
+	position: fixed;
+	right: -20px;
+	top: -20px;
+}

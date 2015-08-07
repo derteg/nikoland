@@ -13,35 +13,116 @@
 	background: #000 url('../pic/video_01.jpg') center no-repeat;
 	background-size: contain;
 	object-fit: cover;
-	z-index:3;
 }
 
 .b-promo_center{
-	position: absolute;
-	z-index: 4;
-	width: 100%;
-	left: 0;
-	top: 43%;
+	position: relative;
 } 
 .b-header__title{
 	color: #fff;
 	text-align: center;
 	text-transform: uppercase;
+	margin-bottom: 100px;
+	opacity: 0;
+	-webkit-transform: translateY(-100px);
+	transform: translateY(-100px);
+	@include transition(opacity 1s, transform 1s);
 	.title_big{
 		display: block;
-		font: 2.5em $bebasBold;
+		font: 3em $bebasBold;
+		letter-spacing: 12px;
+		margin-bottom: 12px;
 	}
 	.title_middle{
 		display: block;
-		font: 0.9375em $bebasRegular
+		font: 1em $bebasRegular;
+		letter-spacing: 6px;
+    	margin-bottom: 10px;
 	}
 	.title_min{
 		display: block;
-		font: 0.8333333333333334em $bebasRegular;
+		font: 1.3em $bebasRegular;
+		letter-spacing: 8px;
+		word-spacing: 6px;
 	}
 }
 
-.b-promo__col .num{
-	font-size: 4.5em;
-	color: $yellow;
+.b-promo__cols{
+	width: 90%;
+	margin: 0 auto;
+}
+.b-promo__col {
+	opacity: 0;
+	.lnk{
+		text-decoration: none;
+		display: block;
+		padding: 20px 0;
+		box-sizing: border-box;
+		&:hover{
+			.sub-title{
+				color: $yellow;
+			}
+		}
+	}
+	.num{
+		font-size: 5.2em;
+		line-height: 0.6em;
+		color: $yellow;
+		float: left;
+		font-family: $bebasBold;
+		position: relative;
+		&:before{
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			margin-top: -20px;
+			margin-left: -32px;
+			background: transparent $sprite01 -96px 0 no-repeat;
+			width: 47px;
+			height: 42px;
+			display: inline-block;
+		}
+	}
+	.sub-title{
+		font-size: 2em;
+		line-height: 0.8em;
+		letter-spacing: 2px;
+		color: $white;
+		text-transform: uppercase;
+		text-decoration: none;
+		margin-left: 78px;
+		display: block;
+		width: 70%;
+		@include transition(color .25s);
+	}
+}
+
+.b-promo__col_01{
+	-webkit-transform: translateY(100px);
+	transform: translateY(100px);
+	@include transition(opacity 1s 0.5s, transform 1s 0.5s);
+}
+.b-promo__col_02{
+	-webkit-transform: translateY(100px);
+	transform: translateY(100px);
+	@include transition(opacity 1s 1s, transform 1s 1s);
+}
+.b-promo__col_03{
+	-webkit-transform: translateY(100px);
+	transform: translateY(100px);
+	@include transition(opacity 1s 1.5s, transform 1s 1.5s);
+}
+
+.pace-done{
+	.b-header__title{
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	.b-promo__col {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
 }
