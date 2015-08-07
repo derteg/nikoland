@@ -28,12 +28,15 @@
 	text-align: center;
 	text-transform: uppercase;
 	.title_big{
+		display: block;
 		font: 2.5em $bebasBold;
 	}
 	.title_middle{
+		display: block;
 		font: 0.9375em $bebasRegular
 	}
 	.title_min{
+		display: block;
 		font: 0.8333333333333334em $bebasRegular;
 	}
 }

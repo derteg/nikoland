@@ -1,9 +1,6 @@
 // $('HTML').addClass('JS');
 
 $(function (){
-	var interactBG = $("#interactBG"),
-		$promoSlider = $('#promoSlider');
-
 	$('#fullpage').fullpage({
 		verticalCentered: true,
 		css3: true,
@@ -11,6 +8,11 @@ $(function (){
 		loopBottom: false,
 		loopTop: false,
 		afterRender: function(){
+			var pluginContainer = $(this),
+				$promoSlider = $('#promoSlider'),
+				$interactBG = $("#interactBG"),
+				win = $(window);
+
 			$('#bgvid').get(0).play();
 
 			function picsSetHW(){
@@ -23,14 +25,18 @@ $(function (){
 					$picCont.height($slideW).width($slideW);
 			}
 
-			$('#promoSlider').on('init', picsSetHW);
+			$promoSlider.on('init', picsSetHW);
 
-			$('#promoSlider').slick({
+			$promoSlider.slick({
 				infinite: false,
 				slidesToShow: 3,
 				slidesToScroll: 1,
 				focusOnSelect: true,
-				cssEase: 'cubic-bezier(0.455, 0.03, 0.515, 0.955)',
+				swipeToSlide: true,
+				touchThreshold: 13,
+				edgeFriction: 0.5,
+				speed: 700,
+				cssEase: 'cubic-bezier(0.55, 0.085, 0.68, 0.53)',
 				responsive: [
 					{
 					breakpoint: 1281,
@@ -48,158 +54,73 @@ $(function (){
 					]
 			});
 
-			$('#promoSlider').on('setPosition', picsSetHW);
+			$promoSlider.on('setPosition', picsSetHW);
 
-			$("#interactBG").interactive_bg({
-				strength: 50,
-				scale: 1.08,
-				animationSpeed: "400ms"
-			});
+			$interactBG.prepend('<div class="interact-bg">');
+
+			// $('.interact-bg', $interactBG).css({
+			// 	width: win.outerWidth(),
+			// 	height: win.outerHeight()
+			// });
+
+			
+		},
+		afterLoad: function(anchorLink, index, slideAnchor, slideIndex){
+			var $interactBG = $("#interactBG");
+			var currentMousePos = { x: -1, y: -1 };
+
+			function setTranzishnBG(e){
+				var that = $(this),
+					amountMovedX = (e.pageX * -1 / 4);
+					amountMovedY = (e.pageY * -1 / 4);
+
+					
+					$('.interact-bg', $interactBG).css({
+						'left': amountMovedX,
+						'top': amountMovedY
+					});
+			}
+
+			if(index == 3){
+				$(document).mousemove(setTranzishnBG);
+			}
+
+
 		},
 		afterResize: function(){
 			var pluginContainer = $(this),
+				$interactBG = $("#interactBG"),
 				win = $(window);
 
-			$("#interactBG").find('.ibg-bg').css({
-				width: win.outerWidth(),
-				height: win.outerHeight()
-			});
+			// $('.interact-bg', $interactBG).css({
+			// 	width: win.outerWidth(),
+			// 	height: win.outerHeight()
+			// });
+		},
+		onLeave: function(index, nextIndex, direction){
+			var $interactBG = $("#interactBG"),
+				$bg = $('.interact-bg', $interactBG),
+				$contact = $('#promoContact', $interactBG);
+
+			if(nextIndex == 3){
+				$bg.css({
+					"-webkit-transform": "translate3d(0, 0, 0) scale(1)",
+					"-moz-transform": "translate3d(0, 0, 0) scale(1)",
+					"-o-transform": "translate3d(0, 0, 0) scale(1)",
+					"transform": "translate3d(0, 0, 0) scale(1)"
+				});
+
+				$contact.fadeIn(1200);
+			} else {
+				$bg.css({
+					"-webkit-transform": "translate3d(0, 0, 0) scale(1.3)",
+					"-moz-transform": "translate3d(0, 0, 0) scale(1.3)",
+					"-o-transform": "translate3d(0, 0, 0) scale(1.3)",
+					"transform": "translate3d(0, 0, 0) scale(1.3)"
+				});
+				$contact.fadeOut(1200);
+			}
 		}
 	});
 });
 
-
-(function($){
-  
-  var defaults = {
-	strength: 50,
-	scale: 1.07,
-	animationSpeed: "100ms",
-	contain: true,
-	wrapContent: false
-  };  
-  
-  $.fn.interactive_bg = function(options){
-	return this.each(function(){
-	  var settings = $.extend({}, defaults, options),
-		  el = $(this),
-		  h = el.outerHeight(),
-		  w = el.outerWidth(),
-		  sh = settings.strength / h,
-		  sw = settings.strength / w,
-		  has_touch = 'ontouchstart' in document.documentElement;
-		  
-	  if (settings.contain === true) {
-		el.css({
-		  overflow: "hidden"
-		});
-	  }
-	  // Insert new container so that the background can be contained when scaled.
-	  
-	  if (settings.wrapContent === false) {
-		el.prepend("<div class='ibg-bg'></div>");
-	  } else {
-		el.wrapInner("<div class='ibg-bg'></div>");
-	  }
-	  
-	  
-	  
-	  // Set background to the newly added container.
-	  
-	  if (el.data("ibg-bg") !== undefined) {
-		el.find("> .ibg-bg").css({
-		  background: "url('" + el.data("ibg-bg") + "') no-repeat center center",
-		  "background-size": "cover",
-		});
-	  }
-	  
-	  el.find("> .ibg-bg").css({
-		width: w,
-		height: h
-	  });
-	  
-	 
-	 function deviceMotionHandler(eventData) {
-		var accX = Math.round(event.accelerationIncludingGravity.x*10) / 10,
-			accY = Math.round(event.accelerationIncludingGravity.y*10) / 10,
-			xA = -(accX / 10) * settings.strength,
-			yA = -(accY / 10) * settings.strength,
-			newX = -(xA*2),
-			newY = -(yA*2);
-			
-			el.find("> .ibg-bg").css({
-			  "-webkit-transform": "matrix(" + settings.scale + ",0,0," + settings.scale + "," + newX + "," + newY + ")",
-			  "-moz-transform": "matrix(" + settings.scale + ",0,0," + settings.scale + "," + newX + "," + newY + ")",
-			  "-o-transform": "matrix(" + settings.scale + ",0,0," + settings.scale + "," + newX + "," + newY + ")",
-			  "transform": "matrix(" + settings.scale + ",0,0," + settings.scale + "," + newX + "," + newY + ")"
-			});    
-
-	 }
-	  
-	  if(has_touch || screen.width <= 699) {
-		// For Mobile
-		// Add support for accelerometeron mobile
-		window.addEventListener('devicemotion', deviceMotionHandler, false);
-		
-	  } else {
-		// For Desktop 
-		// Animate only scaling when mouse enter
-		el.mouseenter(function(e) {
-		  if (settings.scale != 1) el.addClass("ibg-entering");
-		  el.find("> .ibg-bg").css({
-			"-webkit-transform": "matrix(" + settings.scale + ",0,0," + settings.scale + ",0,0)",
-			"-moz-transform": "matrix(" + settings.scale + ",0,0," + settings.scale + ",0,0)",
-			"-o-transform": "matrix(" + settings.scale + ",0,0," + settings.scale + ",0,0)",
-			"transform": "matrix(" + settings.scale + ",0,0," + settings.scale + ",0,0)",
-			"-webkit-transition": "-webkit-transform " + settings.animationSpeed + " linear",
-			"-moz-transition": "-moz-transform " + settings.animationSpeed + " linear",
-			"-o-transition": "-o-transform " + settings.animationSpeed + " linear",
-			"transition": "transform " + settings.animationSpeed + " linear"
-		  }).on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-
-			// This will signal the mousemove below to execute when the scaling animation stops
-			el.removeClass("ibg-entering");
-		  });
-		}).mousemove(function(e){
-		  // This condition prevents transition from causing the movement of the background to lag
-		  if (!el.hasClass("ibg-entering") && !el.hasClass("exiting")) {
-			var pageX = e.pageX || e.clientX,
-				pageY = e.pageY || e.clientY;
-
-				pageX = (pageX - el.offset().left) - (w / 2);
-				pageY = (pageY - el.offset().top) - (h / 2);
-				
-			var newX = ((sw * pageX)) * - 1,
-				newY = ((sh * pageY)) * - 1;
-			// Use matrix to move the background from its origin
-			// Also, disable transition to prevent lag
-			el.find("> .ibg-bg").css({
-			  "-webkit-transform": "matrix(" + settings.scale + ",0,0," + settings.scale + "," + newX + "," + newY + ")",
-			  "-moz-transform": "matrix(" + settings.scale + ",0,0," + settings.scale + "," + newX + "," + newY + ")",
-			  "-o-transform": "matrix(" + settings.scale + ",0,0," + settings.scale + "," + newX + "," + newY + ")",
-			  "transform": "matrix(" + settings.scale + ",0,0," + settings.scale + "," + newX + "," + newY + ")"
-			});
-		  }
-		}).mouseleave(function(e) {
-		  if (settings.scale != 1) el.addClass("ibg-exiting");
-		  // Same condition applies as mouseenter. Rescale the background back to its original scale
-		  el.addClass("ibg-exiting").find("> .ibg-bg").css({
-			"-webkit-transform": "matrix(1,0,0,1,0,0)",
-			"-moz-transform": "matrix(1,0,0,1,0,0)",
-			"-o-transform": "matrix(1,0,0,1,0,0)",
-			"transform": "matrix(1,0,0,1,0,0)",
-			"-webkit-transition": "-webkit-transform " + settings.animationSpeed + " linear",
-			"-moz-transition": "-moz-transform " + settings.animationSpeed + " linear",
-			"-o-transition": "-o-transform " + settings.animationSpeed + " linear",
-			"transition": "transform " + settings.animationSpeed + " linear"
-		  }).on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-			el.removeClass("ibg-exiting");
-		  });
-		});
-	  }
-	});
-	
-  };
-  
-  
-})(jQuery);

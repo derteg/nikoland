@@ -397,7 +397,7 @@ body {
   font-size: 16px;
   font-family: "bebas_neuebold", sans-serif; }
 
-p {
+p, h1, h2, h3, h4, h5, h6, ul, li {
   padding: 0;
   margin: 0; }
 
@@ -497,10 +497,13 @@ p {
   text-align: center;
   text-transform: uppercase; }
   .b-header__title .title_big {
+    display: block;
     font: 2.5em "bebas_neuebold", sans-serif; }
   .b-header__title .title_middle {
+    display: block;
     font: 0.9375em "bebas_neue_regularregular", sans-serif; }
   .b-header__title .title_min {
+    display: block;
     font: 0.83333em "bebas_neue_regularregular", sans-serif; }
 
 .b-promo__col .num {
@@ -553,7 +556,7 @@ p {
   .b-promo__carousel .slick-arrow:hover {
     opacity: 1; }
   .b-promo__carousel .slick-arrow.slick-disabled {
-    opacity: 0.5; }
+    opacity: 0.3; }
   .b-promo__carousel .slick-arrow.slick-prev {
     margin-right: 50px;
     background-position: 14px 100%; }
@@ -565,16 +568,16 @@ p {
   outline: none; }
 
 .b-promo__slide {
-  max-width: 750px;
-  max-height: 750px; }
+  max-width: 650px;
+  max-height: 650px; }
   .b-promo__slide .b-pic-bg__cont {
     position: absolute; }
   .b-promo__slide .l-pic-bg {
     width: 100%;
     height: auto;
-    -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 25px 5px transparent;
+    -moz-box-shadow: 0px 0px 25px 5px transparent;
+    box-shadow: 0px 0px 25px 5px transparent;
     -webkit-transform: scale(1);
     transform: scale(1);
     -moz-transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -584,9 +587,11 @@ p {
   .b-promo__slide:hover .b-pic-bg__cont {
     z-index: 2; }
   .b-promo__slide:hover .l-pic-bg {
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1); }
+    -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.75);
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15); }
   .b-promo__slide:hover .b-promo__slide-lnk {
     z-index: 4; }
   .b-promo__slide .b-promo__slide-lnk {
@@ -603,12 +608,48 @@ p {
     position: absolute;
     bottom: 20px;
     left: 20px;
+    margin: 0;
     font-size: 3.125em;
     line-height: 1em;
     color: #fff;
     width: 70%;
     max-width: 500px;
     text-transform: uppercase; }
+
+.interact-bg {
+  background: transparent url("../pic/pic_01.jpg") 50% 50% no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 150%;
+  -webkit-transform: translate3d(0, 0, 0) scale(1.1);
+  transform: translate3d(0, 0, 0) scale(1.1);
+  -moz-transition: transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition: transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+.b-promo__contacts {
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  display: none; }
+  .b-promo__contacts .l-sub-title {
+    font-size: 30px;
+    letter-spacing: 5px;
+    font-family: "bebas_neue_regularregular", sans-serif; }
+  .b-promo__contacts .l-phone {
+    margin: 10px 0;
+    font-size: 60px;
+    color: #fff; }
+  .b-promo__contacts .l-mail a {
+    font-size: 40px;
+    letter-spacing: 5px;
+    color: #fff;
+    font-family: "bebas_neue_regularregular", sans-serif; }
 
 /**
  * fullPage 2.6.6
@@ -895,5 +936,8 @@ html.fp-enabled,
   height: 39px;
   display: inline-block;
   background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAnCAYAAAAYRfjHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowQTUwOUNEQzgxRTcxMUU0OEZFQ0Y4NDA3NkIyMzFBRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowQTUwOUNERDgxRTcxMUU0OEZFQ0Y4NDA3NkIyMzFBRCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ4MThCRUZGODFFNjExRTQ4RkVDRjg0MDc2QjIzMUFEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQ4MThCRjAwODFFNjExRTQ4RkVDRjg0MDc2QjIzMUFEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+eLRehgAAA1NJREFUeNq82FtIFFEYB/DRtrYWZUmMekg3sQtlC14IfOilop6CMESKpKLILtRDRQ8RPRVoPUWWFVhED9FDBGVaFqRQVBaKFpHkkpXdrNQ281at2//L/8BpmFlmL7MHfjpz5sx8O2fO+ebsauFwuB+qwQ1assif1vBEkf+5yQqcqmnaNW2ieKENyrRkFERfyDteAxe5fRamOt3VohNOcXszDEE7zHc6cCV8gBTuL4Ln8BPKnQy8hF1crBycBrWsr+V+wgPLnb6DYyaNNsAwBCEv0YE1zuUui4b3eedDHAMJDbyMF/ebNPwIXzjapVyCtEQFngRf4bBJw1/wgNul7PZOiw9pO4HoJQQ3YK1hqmfCZCYXKVehEIbgCVTEmkBUq9mVOUrdRiXBqG0lt5/gsSuQHmtX6xcbhP1K3Xle3GNxkRIIwTi8ZuJ5BM1wC9pgQaSuljIG9VCi1OXDKAybdFgaVIFcJwVmwB1ogW74AQXQBLMjdbVYx08/i/t90G3SLoevVCkn4QK3DxravWQeCMAcq67W+KzGYAf3pRsbDW2Ws40c26bUy5T7Az6l7hxT7yt4D3OtAos6uA3zeBdHlGO72COjsNRwXj6PBZS6Cl6jBkb04FaBt8JvOMST9ABnuP8NsizOrWabSialz/Cd9NJjFTiT3fiGd+BS0uYLG+/qHp4X4sjOYL2P03JTpJObGEiez1tuX7c5T7cob7VUO/NYtSf8fzlqM6iH8/lmNAlElc2A0mXro8hKVXyL+WINLB4zeLPNNZifg/JAtCnTTD2D93LQWbWTZ/kQnnEwxhW4kAmhkV0ejDCNtrNNcSwvCeP7WRb5T7ldzukhSaDA0HYmDDBJaPEG3se7zVfqVvIZihVK/WX4BN54A/s4f4+bHCviXYc42ldxDJTF8z7WNXAueiJ8sEE+0162j2rp828Bbyg7oQYaoAumUxZ4IB0ywK2/WSGX71/bxSxwByyGEZKX+RQYhzrogX7ogwEeb413zSVOM3Go3zLkee524puEai9XHRoTgayhWqySfaxcJp0Q4DP0cumaB0Xs6oR+PzbK4/Qo5Vqpyolvi2aDy81BFeQg8lusMOMqZl09xpGbzZ8lhp34JcJlUd8O9+CuUz+B/BVgAFsAZi5LRKDzAAAAAElFTkSuQmCC") 50% 50% no-repeat; }
+
+#interactBG {
+  overflow: hidden; }
 
 /*# sourceMappingURL=style.css.map */

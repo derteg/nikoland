@@ -1,5 +1,37 @@
-// .screen_03{
-// 	background: transparent url('../pic/pic_01.jpg') 50% top no-repeat;
-// 	background-size: cover;
-// 	padding: 30% 0 0 0;
-// }
+
+.interact-bg{
+	background: transparent url('../pic/pic_01.jpg') 50% 50% no-repeat;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150%;
+	height: 150%;
+	-webkit-transform: translate3d(0, 0, 0) scale(1.1);
+	transform: translate3d(0, 0, 0) scale(1.1);
+	@include transition (transform 2s ease(out-quad));
+}
+
+.b-promo__contacts{
+	text-transform: uppercase;
+	text-align: center;
+	color: #fff;
+	position: relative;
+	display: none;
+	.l-sub-title{
+		font-size: 30px;
+		letter-spacing: 5px;
+		font-family: $bebasRegular;
+	}
+	.l-phone{
+		margin: 10px 0;
+		font-size: 60px;
+		color: #fff;
+	}
+	.l-mail a{
+		font-size: 40px;
+		letter-spacing: 5px;
+		color: #fff;
+		font-family: $bebasRegular;
+	}
+}
