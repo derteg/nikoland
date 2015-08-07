@@ -622,8 +622,8 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
   position: absolute;
   top: 0;
   left: 0;
-  width: 150%;
-  height: 150%;
+  width: 110%;
+  height: 110%;
   -webkit-transform: translate3d(0, 0, 0) scale(1.1);
   transform: translate3d(0, 0, 0) scale(1.1);
   -moz-transition: transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);

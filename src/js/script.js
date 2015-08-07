@@ -70,15 +70,20 @@ $(function (){
 			var currentMousePos = { x: -1, y: -1 };
 
 			function setTranzishnBG(e){
-				var that = $(this),
-					amountMovedX = (e.pageX * -1 / 4);
-					amountMovedY = (e.pageY * -1 / 4);
+				var that = $(this);
 
+					currentMousePos.x = e.pageX / 10;
+					currentMousePos.y = e.pageY / 10;
+
+					console.log(currentMousePos.x);
 					
-					$('.interact-bg', $interactBG).css({
-						'left': amountMovedX,
-						'top': amountMovedY
-					});
+						$('.interact-bg', $interactBG).css({
+							"-webkit-transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)",
+							"-moz-transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)",
+							"-o-transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)",
+							"transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)"
+						});
+					
 			}
 
 			if(index == 3){
@@ -86,16 +91,6 @@ $(function (){
 			}
 
 
-		},
-		afterResize: function(){
-			var pluginContainer = $(this),
-				$interactBG = $("#interactBG"),
-				win = $(window);
-
-			// $('.interact-bg', $interactBG).css({
-			// 	width: win.outerWidth(),
-			// 	height: win.outerHeight()
-			// });
 		},
 		onLeave: function(index, nextIndex, direction){
 			var $interactBG = $("#interactBG"),
