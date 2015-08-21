@@ -1,4 +1,6 @@
-
+.screen_03{
+	overflow: hidden;
+}
 .interact-bg{
 	background: transparent url('../pic/pic_01.jpg') 50% 50% no-repeat;
 	background-size: cover;
@@ -19,24 +21,25 @@
 	position: relative;
 	display: none;
 	.l-sub-title{
-		font-size: 24px;
+		font-family: $bebasRegular;
+		font-size: 1.5em;
 		letter-spacing: 7px;
 		margin-bottom: 14px;
-		font-family: $bebasRegular;
 	}
 	.l-phone{
 		margin: 10px 0;
-		font-size: 60px;
 		color: #fff;
 		font-family: $bebasBold;
-		letter-spacing: 6px;
-		word-spacing: -6px;
+		font-size: 5.1875em;
+		letter-spacing: 4px;
+		word-spacing: 4px;
 	}
 	.l-mail a{
-		font-size: 36px;
+		font-size: 2.25em;
 		letter-spacing: 4px;
 		color: #fff;
-		font-family: $bebasRegular;		
+		font-family: $bebasRegular;
+		@include transition(border-color .25s);
 	}
 }
 
@@ -64,6 +67,9 @@
 .b-form-call__wrap{
 	margin: 0 10px;
 }
+.b-form-call__cell_btn{
+	width: 100%;
+}
 .l-form-call__inp,
 .l-form-call_txtar{
 	width: 100%;
@@ -86,7 +92,8 @@
 	height: 94px;
 }
 .l-form-call__btn{
-	width: 100%;
+	display: inline-block;
+	padding: 26px 52px;
 	height: 40px;
 	border: none;
 	outline: none;
@@ -94,6 +101,7 @@
 	text-transform: uppercase;
 	background-color: #fff;
 	font-size: 24px;
+	letter-spacing: 5px;
 	box-sizing: border-box;
 	@include transition(background-color .25s);
 	&:focus{

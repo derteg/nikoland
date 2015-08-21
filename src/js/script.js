@@ -1,4 +1,6 @@
 // $('HTML').addClass('JS');
+var $promoSlider = $('#promoSlider');
+var currentMousePos = { x: -1, y: -1 };
 
 $(function (){
 	logoPopup();
@@ -12,8 +14,8 @@ $(function (){
 		loopTop: false,
 		afterRender: function(){
 			var pluginContainer = $(this),
-				$promoSlider = $('#promoSlider'),
 				$interactBG = $("#interactBG"),
+				$screen02 = $('.screen_02'),
 				win = $(window);
 
 			$('#bgvid').get(0).play();
@@ -37,11 +39,12 @@ $(function (){
 				swipeToSlide: true,
 				touchThreshold: 13,
 				edgeFriction: 0.5,
+				arrows: false,
 				speed: 700,
 				cssEase: 'cubic-bezier(0.55, 0.085, 0.68, 0.53)',
 				responsive: [
 					{
-					breakpoint: 1281,
+					breakpoint: 1280,
 						settings: {
 							slidesToShow: 2,
 							centerMode: false
@@ -59,36 +62,25 @@ $(function (){
 			$promoSlider.on('setPosition', picsSetHW);
 
 			$interactBG.prepend('<div class="interact-bg">');
+			// $screen02.prepend('<div class="transform3D"></div>');
 		},
 		afterLoad: function(anchorLink, index, slideAnchor, slideIndex){
 			var $interactBG = $("#interactBG");
-			var currentMousePos = { x: -1, y: -1 };
-
-			function setTranzishnBG(e){
-				var that = $(this);
-
-					currentMousePos.x = e.pageX / 10;
-					currentMousePos.y = e.pageY / 10;
-					
-						$('.interact-bg', $interactBG).css({
-							"-webkit-transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)",
-							"-moz-transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)",
-							"-o-transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)",
-							"transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)"
-						});
-					
-			}
-
-			if(index == 3){
-				$(document).mousemove(setTranzishnBG);
-			}
 
 
 		},
 		onLeave: function(index, nextIndex, direction){
 			var $interactBG = $("#interactBG"),
 				$bg = $('.interact-bg', $interactBG),
-				$contact = $('#promoContact', $interactBG);
+				$contact = $('#promoContact', $interactBG),
+				$screen02 = $('.screen_02');
+
+			if(index == 1){
+				$promoSlider.addClass('vertical-animate');
+			}
+			if(nextIndex == 1){
+				$promoSlider.removeClass('vertical-animate');
+			}
 
 			if(nextIndex == 3){
 				$bg.css({
@@ -99,6 +91,14 @@ $(function (){
 				});
 
 				$contact.fadeIn(1200);
+
+				$(document).mousemove(setTranzishnBG);
+
+				// $screen02.addClass('translate3D');
+
+				// setTimeout(function(){
+				// 	$screen02.removeClass('translate3D');
+				// }, 2500);
 			} else {
 				$bg.css({
 					"-webkit-transform": "translate3d(-70px, 0, 0) scale(1.3)",
@@ -121,10 +121,10 @@ $(function (){
 			$logo.addClass('active');
 		});
 
-		$logo.on('click', '.js-closer', function(event){
-			$logo.removeClass('active');
+		$popup.on('click', '.js-closer', function(event){
+			if(!event.target.hasAttribute('data-popup-closer')) return;
 
-			console.log(event.target);
+			$logo.removeClass('active');
 		});
 	}
 
@@ -143,6 +143,21 @@ $(function (){
 			}
 
 		});
+	}
+
+	function setTranzishnBG(e){
+		var that = $(this);
+
+			currentMousePos.x = e.pageX / 10;
+			currentMousePos.y = e.pageY / 10;
+			
+			$('.interact-bg').css({
+				"-webkit-transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)",
+				"-moz-transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)",
+				"-o-transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)",
+				"transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)"
+			});
+			
 	}
 });
 

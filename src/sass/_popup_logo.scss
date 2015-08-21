@@ -1,11 +1,12 @@
 .b-logo{
 	position: fixed;
-	top: 20px;
-	left: 20px;
+	top: 0;
+	left: 0;
+	width: 100%;
 	&.active{
 		.b-logo__popup{
 			opacity: 1;
-			left: 20px;
+			left: 0;
 			.b-closer .l-first{
 				-webkit-transform: rotate(45deg);
 				transform: rotate(45deg);
@@ -29,7 +30,7 @@
 	height: 75px;
 	cursor: pointer;
 	opacity: 1;
-	left: 20px;
+	left: 2%;
 	top: 10px;
 	position: absolute;
 	@include transition(background-color .25s);

@@ -12,20 +12,17 @@ $sprite01: url('../ico/sprite_01.png');
 @import "gui/easing";
 @import "gui/pace";
 
-@import "screen_01";
 @import "popup_logo";
+@import "screen_01";
 @import "screen_02";
 @import "screen_03";
 @import "jqueryfullPage";
 @import "slick";
 
-#header{
+.b-header{
 	position: fixed;
 	height: 1px;
 	width: 100%;
 	top: 0px;
 	z-index: 10;
-}
-#interactBG{
-	overflow: hidden;
 }

@@ -10,14 +10,14 @@ module.exports = {
       'src/js/*.js'
     ],
     tasks: [
-      'jshint',
-      'uglify'
+      'newer:jshint',
+      'newer:uglify'
     ]
   },
 
   styles: {
     files: [
-      'src/sass/*.scss'
+      'src/sass/**/*.scss'
     ],
     tasks: [
       'sass:dev'

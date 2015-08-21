@@ -27,23 +27,32 @@
 	-webkit-transform: translateY(-100px);
 	transform: translateY(-100px);
 	@include transition(opacity 1s, transform 1s);
-	.title_big{
-		display: block;
-		font: 3em $bebasBold;
-		letter-spacing: 12px;
-		margin-bottom: 12px;
-	}
 	.title_middle{
 		display: block;
-		font: 1em $bebasRegular;
+		font: 1.65em $bebasRegular;
 		letter-spacing: 6px;
-    	margin-bottom: 10px;
+		margin-bottom: 28px;
+	}
+	.title_big{
+		display: block;
+		font: 4.175em $bebasBold;
+		letter-spacing: 10px;
+		word-spacing: 2px;
+		margin-bottom: 36px;
+		a{
+			color: $white;
+			@include transition(color .25s);
+		}
+		a:hover,
+		a:focus{
+			color: $yellow; 
+		}
 	}
 	.title_min{
 		display: block;
-		font: 1.3em $bebasRegular;
-		letter-spacing: 8px;
-		word-spacing: 6px;
+		font: 1.6em $bebasRegular;
+		letter-spacing: 6px;
+		word-spacing: 2px;
 	}
 }
 
@@ -65,8 +74,8 @@
 		}
 	}
 	.num{
-		font-size: 5.2em;
-		line-height: 0.6em;
+		font-size: 6em;
+		line-height: 0.63em;
 		color: $yellow;
 		float: left;
 		font-family: $bebasBold;
@@ -85,13 +94,13 @@
 		}
 	}
 	.sub-title{
-		font-size: 2em;
-		line-height: 0.8em;
-		letter-spacing: 2px;
+		font-size: 2.25em;
+		line-height: 0.8333333333333334em;
+		letter-spacing: 2.8px;
 		color: $white;
 		text-transform: uppercase;
 		text-decoration: none;
-		margin-left: 78px;
+		margin-left: 80px;
 		display: block;
 		width: 70%;
 		@include transition(color .25s);
@@ -125,4 +134,4 @@
 		-webkit-transform: translateY(0);
 		transform: translateY(0);
 	}
-}
+} 

@@ -1,9 +1,10 @@
 @font-face {
     font-family: 'bebas_neuebold';
-    src: url('../../fonts/bebasneue_bold.eot');
-    src: url('../../fonts/bebasneue_bold.eot?#iefix') format('embedded-opentype'),
-         url('../../fonts/bebasneue_bold.woff') format('woff'),
-         url('../../fonts/bebasneue_bold.ttf') format('truetype');
+    src: local('bebas_neuebold'),
+         url('../../fonts/bebasneue_bold-webfont.woff2') format('woff2'),
+         url('../../fonts/bebasneue_bold-webfont.woff') format('woff'),
+         url('../../fonts/bebasneue_bold-webfont.ttf') format('ttf'),
+         url('../../fonts/bebasneue_bold-webfont.eot') format('eot');
     font-weight: normal;
     font-style: normal;
 
@@ -14,12 +15,14 @@
 
 @font-face {
     font-family: 'bebas_neue_regularregular';
-    src: url('../../fonts/bebasneue_regular.eot');
-    src: url('../../fonts/bebasneue_regular.eot?#iefix') format('embedded-opentype'),
-         url('../../fonts/bebasneue_regular.woff') format('woff'),
-         url('../../fonts/bebasneue_regular.ttf') format('truetype');
+    src: local('bebas_neueregular'),
+         url('../../fonts/bebasneue_regular-webfont.woff2') format('woff2'),
+         url('../../fonts/bebasneue_regular-webfont.woff') format('woff'),
+         url('../../fonts/bebasneue_regular-webfont.ttf') format('ttf'),
+         url('../../fonts/bebasneue_regular-webfont.eot') format('eot');
     font-weight: normal;
     font-style: normal;
+
 }
 
 $bebasRegular: 'bebas_neue_regularregular', sans-serif;
