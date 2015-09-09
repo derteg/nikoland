@@ -12,6 +12,7 @@ $(function (){
 		scrollingSpeed: 700,
 		loopBottom: false,
 		loopTop: false,
+		anchors:['slide_01', 'slide_02', 'slide_03'],
 		afterRender: function(){
 			var pluginContainer = $(this),
 				$interactBG = $("#interactBG"),
@@ -73,13 +74,24 @@ $(function (){
 			var $interactBG = $("#interactBG"),
 				$bg = $('.interact-bg', $interactBG),
 				$contact = $('#promoContact', $interactBG),
-				$screen02 = $('.screen_02');
+				$screen02 = $('.screen_02'),
+				$awwards = $('#header').find('.js-header__awards');
 
 			if(index == 1){
 				$promoSlider.addClass('vertical-animate');
+				
+				$awwards.css({
+					'right': '-145px',
+					'top': '-147px'
+				});
 			}
 			if(nextIndex == 1){
 				$promoSlider.removeClass('vertical-animate');
+
+				$awwards.css({
+					'right': '-20px',
+					'top': '-20px'
+				});
 			}
 
 			if(nextIndex == 3){
@@ -129,20 +141,33 @@ $(function (){
 	}
 
 	function formRowToggle(){
-		var $form = $('#callbackFrom'),
-			$row = $('.js-form-call__toggle', $form),
-			$btn = $('.js-form-call__btn', $form);
+		var $btn = $('.js-form-popup__btn'),
+			$popup = $('.b-contacts__popup'),
+			$close = $('.b-contacts__popup-close', $popup),
+			time = 600;
 
-		$btn.on('click', function(event){
-			if($row.not('.active')){
-				$row.toggleClass('active').slideDown();
-				return false;
-			} else {
-				$row.toggleClass('active').slideUp();
-				return true;
-			}
-
+		$btn.click(function(event){
+			event.preventDefault();
+			$popup
+			.show()
+			.animate({
+				'right': 0
+			}, time);
 		});
+
+		$close.click(closePopUp);
+
+		function closePopUp(){
+			$popup
+				.animate({
+					'right': -536
+				}, time)
+				.queue(function(){
+
+					$(this).hide();
+					$(this).dequeue();
+				});
+		}
 	}
 
 	function setTranzishnBG(e){
@@ -161,5 +186,173 @@ $(function (){
 	}
 });
 
+$(function(){
+	(function aboutPage(){
+		var $btn = $('.js-about__page'), wH, resizeId;
+
+		$btn.click(function(event) {
+			var dataHref = $btn.data('href');
+
+			wH = $(window).innerHeight();
+			
+			$.ajax({
+				method: 'GET',
+				url: dataHref,
+				success: function(html){
+					$('#fullpage').before(html).css('display', 'none');
+					$('.b-about').css('height', wH);
+
+					$('.js-logo__close').css({
+						'display': 'inline-block'
+					});
+				}
+			});
+		});
+
+		$('.js-logo__close').click(function(){
+			$('#fullpage').css('display', 'block');
+			$.fn.fullpage.reBuild();
+			$('.b-about').remove();
+
+			$.fn.fullpage.silentMoveTo('slide_01', 0);
+
+			$('.js-logo__close').css({
+				'display': 'none'
+			});
+		});
+
+		$(window).resize(function() {
+			clearTimeout(resizeId);
+			resizeId = setTimeout(doneResizing, 100);
+		});
+		 
+		function doneResizing(){
+			wH = $(this).innerHeight();
+
+			$('.b-about').css('height', wH);
+		}
+	})();
+});
+
+$(function () {
+	
+	// Change this to the location of your server-side upload handler:
+	var $form = $('#callbackFrom'),
+		$buttonSubmit = $('.js-form-call__btn', $form),
+		$inps = $form.find('input:not([type="file"]), textarea');
+
+	(function formCall(){
+		// $inps.focus(function(){
+		// 	$(this).css('border', '1px solid #ecc02d');
+		// });
 
 
+	$.validator.addMethod("usPhoneFormat", function (value, element) {
+		return this.optional(element) || /^\(\d{3}\) \d{3}\-\d{4}( x\d{1,6})?$/.test(value);
+	}, "Невалидный телефон");
+
+	$.validator.addMethod("laxEmail", function(value, elem) {
+	  // allow any non-whitespace characters as the host part
+	  return this.optional( elem ) || /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@(?:\S{1,63})$/.test( value );
+	}, 'некорректный email');
+
+		$form.validate({
+			highlight: function(element, errorClass) {
+				$(element)
+					.addClass('invalid-elem').removeClass('valid-elem');
+			},
+			unhighlight: function(element, errorClass){
+				$(element)
+					.removeClass('invalid-elem').addClass('valid-elem');
+			},
+			errorElement: "div",
+			errorClass: "l-error-message",
+			rules: {
+				userName: {
+					required: true,
+					minlength: 2
+				},
+				userEmail: {
+					email: true,
+					required: true
+				},
+				userPhone: {
+					usPhoneFormat: true,
+					required: true
+				}
+			},
+			messages: {				
+				userName: {
+					required: 'Введите ваше имя',
+					minlength: jQuery.validator.format('Минимальная длина {0}')
+				},
+				userEmail: {
+					email: 'ваш email адрес должен быть в формате example@example.com',
+					required: 'Нам нужен ваш контактный email'
+				},
+				userPhone: {
+					required: 'Нам нужен ваш контактный телефон'
+				}
+			},
+			submitHandler: function(form){
+				$form.after('<h5 class="b-form-call__done">Заявка успешно отправлена!</h5>');
+			}
+		});
+
+		$inps.change(function(e){
+			$form.validate().element($(e.target));
+		});
+
+		$('#contact-telephone').val('').mask("?(999) 999-9999");
+	})();
+
+
+	$('#fileupload').fileupload({
+		url: 'server/php/',
+		dataType: 'json',
+		autoUpload: false,
+		maxFileSize: 100000, // 10MB
+		acceptFileTypes: /(\.|\/)(doc?x|pdf|zip|jpg|jpeg)$/i
+	}).on('fileuploadadd', function (e, data) {
+		var uploadErrors = [];
+        var acceptFileTypes = /(\.|\/)(doc?x|pdf|zip|jpg|jpeg)$/i;
+
+        $.each(data.files, function (index, file) {
+        		var node = $('<p/>').text(file.name);
+
+        		data.context = $('<div/>').appendTo('#fileupload__files');
+
+	        if(data.originalFiles[0].type.length && !acceptFileTypes.test(data.originalFiles[0].type)) {
+	        	console.log(111);
+	            node.appendTo(data.context)
+	                .append($('<span class="text-danger"/>').text(' Недопустимое расширение файла'));
+	            uploadErrors.push('Недопустимое расширение файла');
+	        }
+	        if(data.originalFiles[0].size > 100000) {
+	            node.appendTo(data.context)
+	                .append($('<span class="text-danger"/>').text(' Слишком многа букав'));
+	            uploadErrors.push('Слишком многа букав');
+	        }
+	        if(uploadErrors.length === 0) {
+        		
+        		node.appendTo(data.context);
+	        }
+
+
+	        $('#callSubmit').submit(function(){
+	        	data.submit();
+	        });
+		});
+	}).on('fileuploaddone', function (e, data) {
+		$.each(data.result.files, function (index, file) {
+			$('<p style="color: green;">' + file.name + '<i class="elusive-ok" style="padding-left:10px;"/> - Type: ' + file.type + ' - Size: ' + file.size + ' byte</p>')
+			.appendTo('#div_files');
+		});
+	}).on('fileuploadfail', function (e, data) {
+		$.each(data.messages, function (index, error) {
+			$('<p style="color: red;">Upload file error: ' + error + '<i class="elusive-remove" style="padding-left:10px;"/></p>')
+			.appendTo('#div_files');
+		});
+	}).prop('disabled', !$.support.fileInput)
+		.parent().addClass($.support.fileInput ? undefined : 'disabled');
+});

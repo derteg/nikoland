@@ -1,0 +1,33 @@
+.b-about{
+	position: relative;
+	height: 100%;
+	z-index: 200;
+	background: transparent url('../pic/pic_15.jpg') left top no-repeat;
+	background-size: cover;
+}
+.b-about__cont{
+	width: 44%;
+	height: 100%;
+	padding: 158px 60px 60px;
+	overflow: auto;
+	background: transparent url('../pic/video_01.jpg') left top repeat-y;
+	background-size: cover;
+	box-sizing: border-box;
+}
+.b-about__title{
+	color: $white;
+	font-size: 52px;
+	font-weight: normal;
+	letter-spacing: 1.5px;
+	word-spacing: 3px;
+	line-height: 60px;
+}
+.b-about__content{
+	color: $white;
+	p{
+		font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+		font-size: 18px;
+		line-height: 30px;
+		margin-bottom: 20px;
+	}
+}
