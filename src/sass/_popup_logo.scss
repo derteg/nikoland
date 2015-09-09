@@ -1,7 +1,7 @@
 .b-logo{
 	position: fixed;
-	top: 0;
-	left: 0;
+	top: 10px;
+	left: 2%;
 	width: 100%;
 	&.active{
 		.b-logo__popup{
@@ -30,8 +30,8 @@
 	height: 75px;
 	cursor: pointer;
 	opacity: 1;
-	left: 2%;
-	top: 10px;
+	left: 0;
+	top: 0;
 	position: absolute;
 	@include transition(background-color .25s);
 	&:hover{
@@ -121,4 +121,22 @@
 	position: fixed;
 	right: -20px;
 	top: -20px;
+}
+
+.b-logo__close{
+	width: 75px;
+	height: 75px;
+	left: 75px;
+    top: 0;
+    position: absolute;
+	display: none;
+	line-height: 75px;
+	text-align: center;
+	background-color: $white;
+	cursor: pointer;
+	.l-ico{
+		display: inline-block;
+		vertical-align: middle;
+		@include sprite('ico_04');
+	}
 }

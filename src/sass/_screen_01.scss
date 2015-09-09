@@ -39,13 +39,12 @@
 		letter-spacing: 10px;
 		word-spacing: 2px;
 		margin-bottom: 36px;
-		a{
-			color: $white;
-			@include transition(color .25s);
-		}
-		a:hover,
-		a:focus{
-			color: $yellow; 
+		color: $white;
+		cursor: pointer;
+		@include transition(color .25s);
+		&:hover,
+		&:focus{
+			color: $yellow;
 		}
 	}
 	.title_min{

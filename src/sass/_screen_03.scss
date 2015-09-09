@@ -23,39 +23,90 @@
 	.l-sub-title{
 		font-family: $bebasRegular;
 		font-size: 1.5em;
-		letter-spacing: 7px;
-		margin-bottom: 14px;
+		font-weight: normal;
+		letter-spacing: 0.23em;
+		margin-bottom: 18px;
 	}
 	.l-phone{
-		margin: 10px 0;
+		margin: 10px 0 12px;
 		color: #fff;
 		font-family: $bebasBold;
 		font-size: 5.1875em;
-		letter-spacing: 4px;
-		word-spacing: 4px;
+		letter-spacing: 0.07em;
 	}
-	.l-mail a{
-		font-size: 2.25em;
-		letter-spacing: 4px;
-		color: #fff;
-		font-family: $bebasRegular;
-		@include transition(border-color .25s);
+	.l-mail{
+		margin-bottom: 30px;
+		a{
+			font-size: 2.15em;
+			letter-spacing: 0.1em;
+			line-height: 0.65em;
+			display: inline-block;
+			color: #fff;
+			font-family: $bebasRegular;
+			@include transition(border-color .25s);
+		}
+	}
+}
+.l-form__btn{
+	display: inline-block;
+	padding: 12px 34px 11px;
+	border: none;	
+	outline: none;
+	font-size: 1.7em;
+	text-transform: uppercase;
+	letter-spacing: 0.17em;
+	box-sizing: border-box;
+	cursor: pointer;
+	@include transition(background-color .5s ease(out-expo));
+	.l-text{
+		vertical-align: middle;
+	}
+}
+.l-form__btn_brd{
+	color: $white;
+	border: $brd1;
+	background-color: transparent;
+	&:hover,
+	&:focus{
+		color: $black;
+		background-color: $white;
 	}
 }
 
-.b-form-call{
-	width: 55%;
-	margin: 40px auto 0;
-}
-.b-form-call__toggle{
+
+.b-contacts__popup{
+	position: absolute;
+	right: -536px;
+	top: 0;
 	display: none;
+	height: 100%;
+	padding: 52px 34px;
+	background: transparent url('../pic/video_01.jpg') left top repeat-y;
+	@include transition(right ease(in-out-back));
+}
+.b-contacts__popup-close{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	display: inline-block;
+	cursor: pointer;
+	@include sprite(ico_05);
+}
+.b-form-call__title{
+	color: $white;
+	font-size: 3.6875em;
+	letter-spacing: 0.045em;
+	font-weight: normal;
+	margin-bottom: 18px;
+}
+.b-form-call{
+	width: 468px;
+}
+.b-form-call__cont{
+	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 }
 .b-form-call__row{
-	margin-left: -10px;
-	margin-right: -10px;
-	margin:0 -10px 20px -10px;
-	line-height: 0;
-	font-size: 0;
+	margin-bottom: 16px;
 }
 .b-form-call__cell{
 	width: 33.3%;
@@ -64,52 +115,74 @@
 	vertical-align: top;
 	position: relative;
 }
-.b-form-call__wrap{
-	margin: 0 10px;
-}
-.b-form-call__cell_btn{
-	width: 100%;
-}
 .l-form-call__inp,
 .l-form-call_txtar{
 	width: 100%;
 	height: 50px;
-	border: 1px solid $white;
-	outline: none;
-	color: $white;
-	text-transform: uppercase;
-	line-height: 50px;
-	font-size: 30px;
 	padding: 2px 16px;
+	outline: none;
+	font-size: 18px;
+	line-height: 20px;
+	color: $white;
+	border: 1px solid $white;
 	background-color: transparent;
 	box-sizing: border-box;
 	@include transition(background-color .25s);
 	&:focus{
-		background-color: rgba(0,0,0,0.3);
+		border: 1px solid #ecc02d;
 	}
 }
 .l-form-call_txtar{
 	height: 94px;
+	padding: 12px 16px;
 }
-.l-form-call__btn{
+.b-form-call__cell_btn{
+	width: auto;
+}
+.b-form__file{
+	overflow: hidden;
 	display: inline-block;
-	padding: 26px 52px;
-	height: 40px;
-	border: none;
-	outline: none;
-	color: $black;
-	text-transform: uppercase;
-	background-color: #fff;
-	font-size: 24px;
-	letter-spacing: 5px;
-	box-sizing: border-box;
-	@include transition(background-color .25s);
-	&:focus{
-		background-color: rgba(255,255,255,0.7);
+	padding: 0 8px;
+	width: 258px;
+	height: 32px;
+	cursor: pointer;
+	background-color: $white;
+	position: relative;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.b-form__file-title{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		line-height: 32px;
+		cursor: pointer;
 	}
+.l-form-call__upload{
+	opacity:0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	@include linkTextOffscreen();
+}
+.l-form-call__files{
+	font-size: 15px;
+	color: $white;
+}
+.b-form-call__done{
+	color: $white;
+	font-size: 30px;
+	letter-spacing: 3px;
+	font-weight: normal;
 }
 
-::-webkit-input-placeholder {color:$white;}
-::-moz-placeholder          {color:$white;}/* Firefox 19+ */
-:-moz-placeholder           {color:$white;}/* Firefox 18- */
-:-ms-input-placeholder      {color:$white;}
+.l-error-message{
+  color: red;
+}
+.invalid-elem{
+  border: 1px solid red;
+}
+.valid-elem{
+  border: 1px solid green;
+}

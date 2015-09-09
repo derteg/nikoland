@@ -1,3 +1,16 @@
+::-moz-selection { background: $yellow; color: $black; text-shadow: none; }
+::selection { background: $yellow; color: $black; text-shadow: none; }
+
+::-webkit-scrollbar { width: 12px;}
+::-webkit-scrollbar-thumb{
+  background-color: rgb(236, 192, 45);
+}
+
+::-webkit-input-placeholder {color:$white;}
+::-moz-placeholder          {color:$white;}/* Firefox 19+ */
+:-moz-placeholder           {color:$white;}/* Firefox 18- */
+:-ms-input-placeholder      {color:$white;}
+
 body{
 	font-size: 16px;
   font-family: $bebasRegular;
@@ -49,15 +62,16 @@ a{text-decoration: none;color: $white;}
 
 
 .lnk_brd.white{
-  border-bottom: 1px solid #fff;
-  border-bottom: 1px solid rgba(255,255,255,0.4);
+  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid rgb(255,255,255);
   @include transition(border-botom .25s);
   &:hover{
-    border-bottom: 1px solid transparent;
-    border-bottom: 1px solid rgba(255,255,255,0.8);
+    border-bottom: 2px solid transparent;
+    border-bottom: 2px solid rgba(255,255,255,0.6);
+    
   }
   &:focus{
-    border-bottom: 1px solid transparent;
-    border-bottom: 1px solid rgba(255,255,255,0);
+    border-bottom: 2px solid transparent;
+    border-bottom: 2px solid rgba(255,255,255,0);
   }
 }
