@@ -652,7 +652,12 @@ a {
 .b-header__awards {
   position: fixed;
   right: -20px;
-  top: -20px; }
+  top: -20px;
+  -webkit-transition: opacity 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955), right 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955), top 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955), -webkit-transform 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-transition: opacity 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955), right 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955), top 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955), -moz-transform 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -o-transition: opacity 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955), right 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955), top 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955), -o-transform 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: opacity 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955), right 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955), top 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955), transform 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  opacity: 1; }
 
 .b-logo__close {
   width: 75px;
@@ -709,15 +714,31 @@ a {
 .screen_01 {
   overflow: hidden; }
 
-.fullscreen-bg__video {
+.b-video__cont .darknes {
+  content: "";
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.4;
+  -webkit-transition: opacity 0.4s cubic-bezier(1, 0, 0, 1);
+  -moz-transition: opacity 0.4s cubic-bezier(1, 0, 0, 1);
+  -o-transition: opacity 0.4s cubic-bezier(1, 0, 0, 1);
+  transition: opacity 0.4s cubic-bezier(1, 0, 0, 1); }
+
+.fullscreen-bg__video {
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000 url("../pic/video_01.jpg") center no-repeat;
+  background: #000 url("../pic/pattern.jpg") center no-repeat;
   background-size: contain;
   object-fit: cover; }
 
@@ -842,10 +863,8 @@ a {
   -webkit-transform: translateY(0);
   transform: translateY(0); }
 
-.screen_02 {
-  background: #071021; }
-  .screen_02.active {
-    z-index: 1; }
+.screen_02.active {
+  z-index: 1; }
 
 .b-promo__carousel {
   -webkit-transition: -webkit-transform 0.7s;
@@ -1008,7 +1027,7 @@ a {
   overflow: auto;
   height: 100%;
   padding: 52px 34px;
-  background: transparent url("../pic/video_01.jpg") left top repeat-y;
+  background: transparent url("../pic/pattern.jpg") left top repeat-y;
   -webkit-transition: right cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -moz-transition: right cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -o-transition: right cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -1416,7 +1435,7 @@ html.fp-enabled,
   height: 100%;
   padding: 158px 60px 60px;
   overflow: auto;
-  background: transparent url("../pic/video_01.jpg") left top repeat-y;
+  background: transparent url("../pic/pattern.jpg") left top repeat-y;
   background-size: cover;
   box-sizing: border-box; }
 
@@ -1444,6 +1463,9 @@ html.fp-enabled,
 
 #wrapper {
   overflow: hidden; }
+
+.fullpage-wrapper {
+  z-index: 100; }
 
 .b-header {
   position: fixed;
