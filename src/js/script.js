@@ -202,6 +202,8 @@ $(function(){
 					$('#fullpage').before(html).css('display', 'none');
 					$('.b-about').css('height', wH);
 
+					$('.js-header__awards').hide();
+
 					$('.js-logo__close').css({
 						'display': 'inline-block'
 					});
@@ -211,6 +213,7 @@ $(function(){
 
 		$('.js-logo__close').click(function(){
 			$('#fullpage').css('display', 'block');
+			$('.js-header__awards').show();
 			$.fn.fullpage.reBuild();
 			$('.b-about').remove();
 
@@ -295,7 +298,12 @@ $(function () {
 				}
 			},
 			submitHandler: function(form){
-				$form.after('<h5 class="b-form-call__done">Заявка успешно отправлена!</h5>');
+				var formData = $form.serializeArray();
+
+				$.post('order', formData, function(data){
+					alert(JSON.stringify(formData));
+					$form.find('.b-form-call__cont').hide().prev('.b-form-call__title').text(formData[1].value + ' ваша заявка успешно принята');
+				});
 			}
 		});
 
@@ -339,9 +347,9 @@ $(function () {
 	        }
 
 
-	        $('#callSubmit').submit(function(){
-	        	data.submit();
-	        });
+	        // $('#callSubmit').submit(function(){
+	        // 	data.submit();
+	        // });
 		});
 	}).on('fileuploaddone', function (e, data) {
 		$.each(data.result.files, function (index, file) {
