@@ -26,6 +26,9 @@ $sprite01: url('../ico/sprite_01.png');
 #wrapper{
 	overflow: hidden;
 }
+.fullpage-wrapper{
+	z-index: 100;
+}
 .b-header{
 	position: fixed;
 	height: 1px;

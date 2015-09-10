@@ -121,7 +121,10 @@
 	position: fixed;
 	right: -20px;
 	top: -20px;
+	@include transition(opacity .7s ease('in-out-quad'), right .7s ease('in-out-quad'), top .7s ease('in-out-quad'), transform .7s ease('in-out-quad'));
+	opacity: 1;
 }
+
 
 .b-logo__close{
 	width: 75px;

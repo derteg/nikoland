@@ -10,7 +10,8 @@ $(function (){
 		css3: true,
 		scrollingSpeed: 700,
 		fitToSectionDelay: 0,
-		normalScrollElements: '.b-contacts__popup',
+		normalScrollElements: '.b-contacts__popup, .b-about',
+		fixedElements: '.b-video__cont',
 		anchors:['slide_01', 'slide_02', 'slide_03'],
 		afterRender: function(){
 			var pluginContainer = $(this),
@@ -37,7 +38,7 @@ $(function (){
 								'-webkit-transition-delay': delay + 's',
 								'transition-delay':  delay + 's'
 							});
-							delay += parseFloat(0.25);
+							delay += parseFloat(0.15);
 						} else {
 							$(element).css({
 								'-webkit-transition-delay': '0s',
@@ -54,7 +55,7 @@ $(function (){
 				slidesToShow: 3,
 				slidesToScroll: 1,
 				swipeToSlide: true,
-				touchThreshold: 50,
+				touchThreshold: 10,
 				edgeFriction: 1,
 				arrows: false,
 				lazyLoad: 'progressive',
@@ -86,7 +87,7 @@ $(function (){
 							'-webkit-transition-delay': delay + 's',
 							'transition-delay':  delay + 's'
 						});
-						delay += parseFloat(0.25);
+						delay += parseFloat(0.15);
 					} else {
 						$(element).css({
 							'-webkit-transition-delay': '0s',
@@ -118,7 +119,15 @@ $(function (){
 				
 				$awwards.css({
 					'right': '-145px',
-					'top': '-147px'
+					'top': '-147px',
+					'opacity': '0',
+					'-webkit-transform': 'scale(0)',
+					'transform': 'scale(0)'
+				});
+
+				$('#bgvid').get(0).pause();
+				$('#bgvid').next().css({
+					'opacity': 0.8
 				});
 			}
 			if(nextIndex == 1){
@@ -126,7 +135,15 @@ $(function (){
 
 				$awwards.css({
 					'right': '-20px',
-					'top': '-20px'
+					'top': '-20px',
+					'opacity': '1',
+					'-webkit-transform': 'scale(1)',
+					'transform': 'scale(1)'
+				});
+
+				$('#bgvid').get(0).play();
+				$('#bgvid').next().css({
+					'opacity': 0.4
 				});
 			}
 
@@ -226,7 +243,8 @@ $(function(){
 
 $(function(){
 	(function aboutPage(){
-		var $btn = $('.js-about__page'), wH, resizeId;
+		var $btn = $('.js-about__page'), wH, resizeId,
+		$awwards = $('.js-header__awards');
 
 		$btn.click(function(event) {
 			var dataHref = $btn.data('href');
@@ -240,7 +258,13 @@ $(function(){
 					$('#fullpage').before(html).css('display', 'none');
 					$('.b-about').css('height', wH);
 
-					$('.js-header__awards').hide();
+					$awwards.css({
+						'right': '-145px',
+						'top': '-147px',
+						'opacity': '0',
+						'-webkit-transform': 'scale(0)',
+						'transform': 'scale(0)'
+					});
 
 					$('.js-logo__close').css({
 						'display': 'inline-block'
@@ -251,11 +275,15 @@ $(function(){
 
 		$('.js-logo__close').click(function(){
 			$('#fullpage').css('display', 'block');
-			$('.js-header__awards').show();
+			$awwards.css({
+				'right': '-20px',
+				'top': '-20px',
+				'opacity': '1',
+				'-webkit-transform': 'scale(1)',
+				'transform': 'scale(1)'
+			});
 			$.fn.fullpage.reBuild();
 			$('.b-about').remove();
-
-			$.fn.fullpage.silentMoveTo('slide_01', 0);
 
 			$('.js-logo__close').css({
 				'display': 'none'
