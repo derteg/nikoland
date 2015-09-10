@@ -54,9 +54,10 @@ $(function (){
 				slidesToShow: 3,
 				slidesToScroll: 1,
 				swipeToSlide: true,
-				touchThreshold: 13,
-				edgeFriction: 0.5,
+				touchThreshold: 50,
+				edgeFriction: 1,
 				arrows: false,
+				lazyLoad: 'progressive',
 				speed: 700,
 				cssEase: 'cubic-bezier(0.55, 0.085, 0.68, 0.53)',
 				responsive: [
@@ -78,11 +79,6 @@ $(function (){
 
 			$promoSlider.on('afterChange', function(slick, currentSlide){
 				var delay = 0;
-
-				// $('.slick-slide').css({
-				// 	'-webkit-transition-delay': 0,
-				// 	'transition-delay':  0
-				// });
 
 				$(this).find('.slick-slide').map(function(index, element){
 					if($(element).hasClass('slick-active')){

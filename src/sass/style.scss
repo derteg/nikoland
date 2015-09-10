@@ -23,6 +23,9 @@ $sprite01: url('../ico/sprite_01.png');
 @import "slick";
 @import "about";
 
+#wrapper{
+	overflow: hidden;
+}
 .b-header{
 	position: fixed;
 	height: 1px;
