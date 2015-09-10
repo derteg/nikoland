@@ -24,10 +24,16 @@
 }
 .b-about__content{
 	color: $white;
+	margin-bottom: 50px;
 	p{
 		font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 		font-size: 18px;
 		line-height: 30px;
 		margin-bottom: 20px;
 	}
+}
+.b-about__btn{
+	font-size: 1.15em;
+	letter-spacing: 0.3em;
+	padding: 16px 34px 15px;
 }

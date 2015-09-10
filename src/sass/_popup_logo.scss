@@ -66,14 +66,14 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			margin-left: -10px;
-			margin-top: -10px;
+			margin-left: -6px;
+			margin-top: -16px;
 			line-height: 0;
 			font-size: 0;
 		}
 		span{
-			width: 1px;
-			height: 23px;
+			width: 2px;
+			height: 20px;
 			background-color: $white;
 			display: inline-block;
 			position: absolute;
@@ -94,17 +94,17 @@
 }
 
 .b-logo__popup-pic{
-	margin-bottom: 14px;
+	margin-bottom: 8px;
 }
 .b-logo__content{
 	p{
 		font-size: 24px;
 		line-height: 28px;
 		letter-spacing: 2px;
-		margin-bottom: 10px;
+		margin-bottom: 8px;
 	}
 	.l-sub-title{
-		margin-bottom: 16px;
+		margin-bottom: 26px;
 	}
 	.l-text{
 		margin-bottom: 16px;
@@ -138,5 +138,19 @@
 		display: inline-block;
 		vertical-align: middle;
 		@include sprite('ico_04');
+	}
+}
+.b-social{
+	margin-top: 34px;
+}
+.l-social__lnk{
+	display: inline-block;
+	vertical-align: bottom;
+	margin: 0px 10px;
+	&.re{ 
+		@include sprite(ico_06);
+	}
+	&.fb{
+		@include sprite(ico_07);
 	}
 }
