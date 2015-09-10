@@ -75,3 +75,30 @@ a{text-decoration: none;color: $white;}
     border-bottom: 2px solid rgba(255,255,255,0);
   }
 }
+
+.b-btn{
+  display: inline-block;
+  padding: 12px 34px 11px;
+  border: none; 
+  outline: none;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  letter-spacing: 0.17em;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: 'bebas_neue_regularregular', sans-serif;
+  @include transition(background-color .5s ease(out-expo));
+  .l-text{
+    vertical-align: middle;
+  }
+  &.b-btn_brd{
+    color: $white;
+    border: $brd1;
+    background-color: transparent;
+    &:hover,
+    &:focus{
+      color: $black;
+      background-color: $white;
+    }
+  }
+}
