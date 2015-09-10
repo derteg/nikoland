@@ -848,13 +848,12 @@ a {
     z-index: 1; }
 
 .b-promo__carousel {
-  -webkit-transform: translateX(5%);
-  transform: translateX(5%);
   -webkit-transition: -webkit-transform 0.7s;
   -moz-transition: -moz-transform 0.7s;
   -o-transition: -o-transform 0.7s;
   transition: transform 0.7s; }
   .b-promo__carousel .slick-list {
+    padding-left: 5%;
     overflow: visible; }
   .b-promo__carousel .slick-slide {
     outline: none; }
@@ -866,6 +865,7 @@ a {
 .b-promo__slide {
   max-width: 650px;
   max-height: 650px;
+  margin: 0;
   position: relative;
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
@@ -1441,6 +1441,9 @@ html.fp-enabled,
   font-size: 1.15em;
   letter-spacing: 0.3em;
   padding: 16px 34px 15px; }
+
+#wrapper {
+  overflow: hidden; }
 
 .b-header {
   position: fixed;

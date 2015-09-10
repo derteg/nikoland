@@ -9,10 +9,9 @@
 }
 
 .b-promo__carousel{
-	-webkit-transform: translateX(5%);
-	transform: translateX(5%);
 	@include transition(transform .7s);
 	.slick-list{
+		padding-left: 5%;
 		overflow: visible;
 	}
 	.slick-slide{
@@ -30,6 +29,7 @@
 .b-promo__slide{
 	max-width: 650px;
 	max-height: 650px;
+	margin: 0;
 	position: relative;
 	-webkit-transform: translateY(100%);
 	transform: translateY(100%);
