@@ -23,6 +23,19 @@ $sprite01: url('../ico/sprite_01.png');
 @import "slick";
 @import "about";
 
+
+@media (max-width:1000px) and(min-width:768px){
+	@import "media_768/screen_02_768";
+}
+
+@media (max-width:767px) {
+	@import "media_320/gui/gui_320";
+	@import "media_320/popup_logo_320";
+	@import "media_320/about_320";
+	@import "media_320/screen_01_320";
+	@import "media_320/screen_02_320";
+}
+
 #wrapper{
 	overflow: hidden;
 }
