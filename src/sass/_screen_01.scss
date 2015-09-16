@@ -16,12 +16,14 @@
 		@include transition(opacity .4s ease(in-out-expo));
 	}	
 }
-.fullscreen-bg__video{
+.b-video__cont{
 	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
+}
+.fullscreen-bg__video{
 	width: 100%;
 	height: 100%;
 	background: #000 url('../pic/pattern.jpg') center no-repeat;
@@ -31,28 +33,31 @@
 
 .b-promo_center{
 	position: relative;
+	text-align: center;
 } 
 .b-header__title{
-	color: #fff;
+	display: inline-block;
+	font-size: 32px;
 	text-align: center;
+	margin-bottom: 90px;
 	text-transform: uppercase;
-	margin-bottom: 100px;
+	color: #fff;
 	opacity: 0;
 	-webkit-transform: translateY(-100px);
 	transform: translateY(-100px);
 	@include transition(opacity 1s, transform 1s);
 	.title_middle{
 		display: block;
-		font: 1.65em $bebasRegular;
+		font: 1.45em $bebasRegular;
 		letter-spacing: 6px;
-		margin-bottom: 28px;
+		margin-bottom: 21px;
 	}
 	.title_big{
 		display: block;
-		font: 4.175em $bebasBold;
-		letter-spacing: 10px;
-		word-spacing: 2px;
-		margin-bottom: 36px;
+		font: 3.9em $bebasBold;
+		letter-spacing: 0.07em;
+		word-spacing: 0em;
+		margin-bottom: 33px;
 		color: $white;
 		cursor: pointer;
 		@include transition(color .25s);
@@ -63,7 +68,7 @@
 	}
 	.title_min{
 		display: block;
-		font: 1.6em $bebasRegular;
+		font: 1.4em $bebasRegular;
 		letter-spacing: 6px;
 		word-spacing: 2px;
 	}
@@ -72,6 +77,7 @@
 .b-promo__cols{
 	width: 90%;
 	margin: 0 auto;
+	text-align: left;
 }
 .b-promo__col {
 	opacity: 0;

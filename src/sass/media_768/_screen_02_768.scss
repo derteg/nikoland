@@ -1,0 +1,39 @@
+.b-promo__slide {
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+	max-width: none;
+	min-width: 0;
+	.b-pic-bg__cont{
+		display: none;
+	}
+	&:hover{
+		z-index: 0;
+	}
+	.l-title{
+		display: none;
+	}
+	.l-logo{
+		line-height: 198px;
+		position: relative;
+		top: auto;
+		left: auto;
+		text-align: center;
+		img{
+			vertical-align: middle;
+		}
+	}
+}
+.b-promo__slide-lnk{
+	width: 100%;
+}
+
+.b-promo__slide_color01{background-color: #5ca026;}
+.b-promo__slide_color02{background-color: #193259;}
+.b-promo__slide_color03{background-color: #ff7c6d;}
+.b-promo__slide_color04{background-color: #ffa600;}
+.b-promo__slide_color05{background-color: #00bda9;}
+.b-promo__slide_color06{background-color: #b951c8;}
+.b-promo__slide_color07{background-color: #181818;}
+.b-promo__slide_color08{background-color: #ff2c1e;}
+.b-promo__slide_color09{background-color: #73a4ce;}
