@@ -72,6 +72,11 @@ jQuery(function($){
 		});
 
 		$promoSlider.on('setPosition', sliderPicsAnimate);
+
+		$('.your-element').on('swipe', function(event, slick, direction){
+			$.fn.fullpage.setMouseWheelScrolling(false);
+			$.fn.fullpage.setAllowScrolling(false);
+		});
 	}
 
 	function picsSetHW(){
