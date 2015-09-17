@@ -1477,7 +1477,7 @@ html.fp-enabled,
   position: relative;
   height: 100%;
   z-index: 200;
-  background: transparent url("../pic/pic_15.jpg") left 50% no-repeat;
+  background: transparent url("../pic/pic_15.jpg") 570px 50% no-repeat;
   background-size: cover; }
 
 .b-about__cont {
@@ -1525,6 +1525,26 @@ html.fp-enabled,
   font-size: 24px;
   letter-spacing: 5.5px;
   padding: 11px 24px 10px; }
+
+@media (max-width: 560px) {
+  .b-about {
+    background: none; }
+  .b-about__cont {
+    padding: 132px 34px 60px 20px; }
+  .b-about__title {
+    font-size: 38px;
+    line-height: 40px;
+    margin-bottom: 20px; }
+  .b-about__content {
+    margin-bottom: 28px; }
+    .b-about__content p {
+      font-size: 15px;
+      line-height: 24px;
+      margin-bottom: 16px; }
+  .b-about__btn {
+    font-size: 18px;
+    letter-spacing: 5.5px;
+    padding: 14px 34px 14px; } }
 
 @media (max-width: 1000px) and (min-width: 768px) {
   .b-promo__slide {
@@ -1575,22 +1595,6 @@ html.fp-enabled,
     min-width: 320px; }
   .b-header__awards {
     display: none; }
-  .b-about__cont {
-    padding: 132px 34px 60px 20px; }
-  .b-about__title {
-    font-size: 38px;
-    line-height: 40px;
-    margin-bottom: 20px; }
-  .b-about__content {
-    margin-bottom: 28px; }
-    .b-about__content p {
-      font-size: 15px;
-      line-height: 24px;
-      margin-bottom: 16px; }
-  .b-about__btn {
-    font-size: 18px;
-    letter-spacing: 5.5px;
-    padding: 14px 34px 14px; }
   .b-header__title .title_middle {
     font-size: 1em;
     letter-spacing: 0.1875em;
