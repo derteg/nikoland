@@ -4,6 +4,8 @@ $.noConflict();
 jQuery(function($){
 	(function($){
 	var $promoSlider = $('#promoSlider'),
+		$picCont = $('.b-pic-bg__cont', $promoSlider),
+		$linkCont = $('.js-promo__slide-lnk', $promoSlider),
 		resizeId,
 		delay = 0.25,
 		duration = 0.5,
@@ -35,21 +37,42 @@ jQuery(function($){
 		toggleSlick = function(){
 			var wW = $(window).width();
 
-			if(wW > maxWidth){
+			if(wW >= maxWidth){
 				runSlick();
+				// $.fn.fullpage.reBuild();
 				$.fn.fullpage.setAutoScrolling(true);
 			} else {
+				// $.fn.fullpage.reBuild();
 				$.fn.fullpage.setAutoScrolling(false);
 			}
 		};
 
-	$promoSlider.on('init', picsSetHW);
-
 	runSlick();
 	setSliderChange();
 
+	$(window).on('load resize', function(event){
+		var wW = $(this).width(),
+			$slideW = $('.slick-slide', $promoSlider).width();
 
-	$(window).on('resize', toggleSlick);
+		if(event.type == 'resize'){
+			toggleSlick();
+		}
+
+		if(wW >= maxWidth){
+			console.log(111);
+			$linkCont.height(406).width(406);
+			$picCont.height(406).width(406);
+		} else {
+			$linkCont.css({
+				'height': 198,
+				'width': '100%'
+			});
+			$picCont.css({
+				'height': 198,
+				'width': '100%'
+			});
+		}
+	});
 	
 	function setSliderChange(){
 		$promoSlider.on('afterChange', function(slick, currentSlide){
@@ -79,30 +102,6 @@ jQuery(function($){
 		$promoSlider.on('swipe', function(event, slick, direction){
 			// $.fn.fullpage.setMouseWheelScrolling(false);
 			// $.fn.fullpage.setAllowScrolling(false);
-		});
-	}
-
-	function picsSetHW(){
-		var $slideW = $('.slick-slide', $promoSlider).width(),
-			$picCont = $('.b-pic-bg__cont', $promoSlider),
-			$linkCont = $('.js-promo__slide-lnk', $promoSlider);
-
-		$(window).on('load resize', function(){
-			var wW = $(this).width();
-
-			if(wW >= 1000){
-				$linkCont.height($slideW).width($slideW);
-				$picCont.height($slideW).width($slideW);
-			} else {
-				$linkCont.css({
-					'height': 198,
-					'width': '100%'
-				});
-				$picCont.css({
-					'height': 198,
-					'width': '100%'
-				});
-			}
 		});
 	}
 
