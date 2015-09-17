@@ -31,12 +31,15 @@ jQuery(function($){
 			$promoSlider.slick(slickVar);
 		};
 
+
 		toggleSlick = function(){
 			var wW = $(window).width();
 
 			if(wW > maxWidth){
-				console.log(111);
 				runSlick();
+				$.fn.fullpage.setAutoScrolling(true);
+			} else {
+				$.fn.fullpage.setAutoScrolling(false);
 			}
 		};
 
@@ -73,9 +76,9 @@ jQuery(function($){
 
 		$promoSlider.on('setPosition', sliderPicsAnimate);
 
-		$('.your-element').on('swipe', function(event, slick, direction){
-			$.fn.fullpage.setMouseWheelScrolling(false);
-			$.fn.fullpage.setAllowScrolling(false);
+		$promoSlider.on('swipe', function(event, slick, direction){
+			// $.fn.fullpage.setMouseWheelScrolling(false);
+			// $.fn.fullpage.setAllowScrolling(false);
 		});
 	}
 
