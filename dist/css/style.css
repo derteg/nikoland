@@ -950,21 +950,17 @@ a {
     -moz-transition: -moz-transform 2s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     -o-transition: -o-transform 2s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1); }
-  .b-promo__slide:hover,
-  .b-promo__slide:focus {
+  .b-promo__slide:hover {
     z-index: 2; }
-    .b-promo__slide:hover .b-pic-bg__cont,
-    .b-promo__slide:focus .b-pic-bg__cont {
+    .b-promo__slide:hover .b-pic-bg__cont {
       z-index: 2; }
-    .b-promo__slide:hover .l-pic-bg,
-    .b-promo__slide:focus .l-pic-bg {
+    .b-promo__slide:hover .l-pic-bg {
       -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.75);
       box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.75);
       -webkit-transform: scale(1.05);
       transform: scale(1.05); }
-    .b-promo__slide:hover .b-promo__slide-lnk,
-    .b-promo__slide:focus .b-promo__slide-lnk {
+    .b-promo__slide:hover .b-promo__slide-lnk {
       z-index: 4; }
   .b-promo__slide .l-logo {
     width: 100%;
