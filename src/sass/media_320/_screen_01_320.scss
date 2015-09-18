@@ -1,21 +1,47 @@
 .b-header__title{
+	margin-bottom: 48px;
 	.title_middle{
-		font-size: 1em;
-		letter-spacing: 0.1875em;
+		font-size: 22px;
+		letter-spacing: 3px;
 		word-spacing: 1px;
-		margin-bottom: 16px;
+		margin-bottom: 12px;
 	}
 	.title_big{
-		font-size: 1.875em;
-		line-height: 1.1333333333333333em;
-		margin-bottom: 20px;
+		font-size: 38px;
+		line-height: 34px;
+		margin-bottom: 16px;
+		letter-spacing: 3px;
+		word-spacing: 0px;
 	}
 	.title_min{
-		font-size: 16px;
+		font-size: 22px;
 		letter-spacing: 3px;
 		word-spacing: 1px;
 	}
 }
+.b-promo__cols{
+	width: 80%;
+	padding-left: 8px;
+}
 .b-promo__col{
 	width: 100%;
+	margin-bottom: 24px;
+	.lnk{
+		padding: 0;
+	}
+	.num{
+		font-size: 76px;
+		line-height: 44px;
+		&:before{
+			display: none;
+		}
+	}
+	.sub-title{
+		font-size: 26px;
+		line-height: 22px;
+		letter-spacing: 2px;
+		word-spacing: -1px;
+		margin-left: 60px;
+		width: 80%;
+	}
 }

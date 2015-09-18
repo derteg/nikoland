@@ -27,7 +27,9 @@ $sprite01: url('../ico/sprite_01.png');
 
 
 @media (max-width:1000px) and(min-width:768px){
+	@import "media_768/screen_01_768";
 	@import "media_768/screen_02_768";
+	@import "media_768/screen_03_768";
 }
 
 @media (max-width:767px) {
@@ -35,6 +37,7 @@ $sprite01: url('../ico/sprite_01.png');
 	@import "media_320/popup_logo_320";
 	@import "media_320/screen_01_320";
 	@import "media_320/screen_02_320";
+	@import "media_320/screen_03_320";
 }
 
 #wrapper{

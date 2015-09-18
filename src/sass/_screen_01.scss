@@ -48,15 +48,14 @@
 	@include transition(opacity 1s, transform 1s);
 	.title_middle{
 		display: block;
-		font: 1.45em $bebasRegular;
+		font: 46px $bebasRegular;
 		letter-spacing: 6px;
 		margin-bottom: 21px;
 	}
 	.title_big{
 		display: block;
-		font: 3.9em $bebasBold;
-		letter-spacing: 0.07em;
-		word-spacing: 0em;
+		font: 125px $bebasBold;
+		letter-spacing: 9px;
 		margin-bottom: 33px;
 		color: $white;
 		cursor: pointer;
@@ -68,7 +67,7 @@
 	}
 	.title_min{
 		display: block;
-		font: 1.4em $bebasRegular;
+		font: 45px $bebasRegular;
 		letter-spacing: 6px;
 		word-spacing: 2px;
 	}
@@ -93,8 +92,8 @@
 		}
 	}
 	.num{
-		font-size: 6em;
-		line-height: 0.63em;
+		font-size: 96px;
+		line-height: 60px;
 		color: $yellow;
 		float: left;
 		font-family: $bebasBold;
@@ -113,9 +112,9 @@
 		}
 	}
 	.sub-title{
-		font-size: 2.25em;
-		line-height: 0.8333333333333334em;
-		letter-spacing: 2.8px;
+		font-size: 36px;
+		line-height: 30px;
+		letter-spacing: 3px;
 		color: $white;
 		text-transform: uppercase;
 		text-decoration: none;
