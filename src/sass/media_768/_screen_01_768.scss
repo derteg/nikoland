@@ -1,0 +1,36 @@
+.b-header__title{
+	margin-bottom: 96px;
+	.title_middle{
+		font-size: 32px;
+		letter-spacing: 5px;
+		margin-bottom: 23px;
+	}
+	.title_big{
+		font-size: 84px;
+		letter-spacing: 6px;
+		word-spacing: -1px;
+		line-height: 80px;
+		margin-bottom: 22px;
+	}
+	.title_min{
+		font-size: 32px;
+		letter-spacing: 5px;
+		word-spacing: 0;
+	}
+}
+.b-promo__col {
+	.num{
+		font-size: 76px;
+		line-height: 40px;
+		&:before{
+			display: none;
+		}
+	}
+	.sub-title{
+		font-size: 26px;
+		line-height: 22px;
+		letter-spacing: 2px;
+		margin-left: 58px;
+		width: 80%;
+	}
+}

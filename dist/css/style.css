@@ -803,14 +803,13 @@ a {
   transition: opacity 1s, transform 1s; }
   .b-header__title .title_middle {
     display: block;
-    font: 1.45em "bebas_neue_regularregular", sans-serif;
+    font: 46px "bebas_neue_regularregular", sans-serif;
     letter-spacing: 6px;
     margin-bottom: 21px; }
   .b-header__title .title_big {
     display: block;
-    font: 3.9em "bebas_neuebold", sans-serif;
-    letter-spacing: 0.07em;
-    word-spacing: 0em;
+    font: 125px "bebas_neuebold", sans-serif;
+    letter-spacing: 9px;
     margin-bottom: 33px;
     color: #fff;
     cursor: pointer;
@@ -823,7 +822,7 @@ a {
       color: #ecc02d; }
   .b-header__title .title_min {
     display: block;
-    font: 1.4em "bebas_neue_regularregular", sans-serif;
+    font: 45px "bebas_neue_regularregular", sans-serif;
     letter-spacing: 6px;
     word-spacing: 2px; }
 
@@ -842,8 +841,8 @@ a {
     .b-promo__col .lnk:hover .sub-title {
       color: #ecc02d; }
   .b-promo__col .num {
-    font-size: 6em;
-    line-height: 0.63em;
+    font-size: 96px;
+    line-height: 60px;
     color: #ecc02d;
     float: left;
     font-family: "bebas_neuebold", sans-serif;
@@ -860,9 +859,9 @@ a {
       height: 42px;
       display: inline-block; }
   .b-promo__col .sub-title {
-    font-size: 2.25em;
-    line-height: 0.8333333333333334em;
-    letter-spacing: 2.8px;
+    font-size: 36px;
+    line-height: 30px;
+    letter-spacing: 3px;
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
@@ -931,8 +930,8 @@ a {
   max-height: 650px;
   margin: 0;
   position: relative;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
+  -webkit-transform: translateY(100%) translateZ(0);
+  transform: translateY(100%) translateZ(0);
   -webkit-transition-delay: 0;
   transition-delay: 0;
   -webkit-transition: -webkit-transform cubic-bezier(1, 0, 0, 1);
@@ -944,22 +943,20 @@ a {
     height: auto;
     -webkit-box-shadow: 0px 0px 25px 5px transparent;
     box-shadow: 0px 0px 25px 5px transparent;
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    -webkit-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0);
     -webkit-transition: -webkit-transform 2s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     -moz-transition: -moz-transform 2s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     -o-transition: -o-transform 2s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1); }
   .b-promo__slide:hover {
     z-index: 2; }
-    .b-promo__slide:hover .b-pic-bg__cont {
-      z-index: 2; }
     .b-promo__slide:hover .l-pic-bg {
       -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.75);
       box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.75);
-      -webkit-transform: scale(1.05);
-      transform: scale(1.05); }
+      -webkit-transform: scale(1.05) translateZ(0);
+      transform: scale(1.05) translateZ(0); }
     .b-promo__slide:hover .b-promo__slide-lnk {
       z-index: 4; }
   .b-promo__slide .l-logo {
@@ -968,6 +965,8 @@ a {
     position: absolute;
     top: 20px;
     left: 20px; }
+    .b-promo__slide .l-logo.l-logo_hide {
+      display: none; }
   .b-promo__slide .l-title {
     position: absolute;
     bottom: 20px;
@@ -1014,22 +1013,22 @@ a {
   display: none; }
   .b-promo__contacts .l-sub-title {
     font-family: "bebas_neue_regularregular", sans-serif;
-    font-size: 1.5em;
     font-weight: normal;
-    letter-spacing: 0.23em;
-    margin-bottom: 18px; }
+    font-size: 24px;
+    letter-spacing: 6px;
+    margin-bottom: 6px; }
   .b-promo__contacts .l-phone {
-    margin: 10px 0 12px;
     color: #fff;
     font-family: "bebas_neuebold", sans-serif;
-    font-size: 5.1875em;
-    letter-spacing: 0.07em; }
+    font-size: 83px;
+    letter-spacing: 6px;
+    margin-bottom: 8px; }
   .b-promo__contacts .l-mail {
     margin-bottom: 30px; }
     .b-promo__contacts .l-mail a {
-      font-size: 2.15em;
-      letter-spacing: 0.1em;
-      line-height: 0.65em;
+      font-size: 34px;
+      line-height: 24px;
+      letter-spacing: 3px;
       display: inline-block;
       color: #fff;
       font-family: "bebas_neue_regularregular", sans-serif;
@@ -1040,12 +1039,12 @@ a {
 
 .l-form__btn {
   display: inline-block;
-  padding: 12px 34px 11px;
+  padding: 10px 34px 8px;
   border: none;
   outline: none;
-  font-size: 1.7em;
   text-transform: uppercase;
-  letter-spacing: 0.17em;
+  font-size: 27px;
+  letter-spacing: 5px;
   box-sizing: border-box;
   cursor: pointer;
   font-family: 'bebas_neue_regularregular', sans-serif;
@@ -1543,6 +1542,33 @@ html.fp-enabled,
     padding: 14px 34px 14px; } }
 
 @media (max-width: 1000px) and (min-width: 768px) {
+  .b-header__title {
+    margin-bottom: 96px; }
+    .b-header__title .title_middle {
+      font-size: 32px;
+      letter-spacing: 5px;
+      margin-bottom: 23px; }
+    .b-header__title .title_big {
+      font-size: 84px;
+      letter-spacing: 6px;
+      word-spacing: -1px;
+      line-height: 80px;
+      margin-bottom: 22px; }
+    .b-header__title .title_min {
+      font-size: 32px;
+      letter-spacing: 5px;
+      word-spacing: 0; }
+  .b-promo__col .num {
+    font-size: 76px;
+    line-height: 40px; }
+    .b-promo__col .num:before {
+      display: none; }
+  .b-promo__col .sub-title {
+    font-size: 26px;
+    line-height: 22px;
+    letter-spacing: 2px;
+    margin-left: 58px;
+    width: 80%; }
   .b-promo__slide {
     width: 50%;
     display: inline-block;
@@ -1563,6 +1589,10 @@ html.fp-enabled,
       text-align: center; }
       .b-promo__slide .l-logo img {
         vertical-align: middle; }
+      .b-promo__slide .l-logo.l-logo_hide {
+        display: block; }
+    .b-promo__slide.full-width {
+      width: 100%; }
   .b-promo__slide-lnk {
     width: 100%; }
   .b-promo__slide_color01 {
@@ -1582,7 +1612,11 @@ html.fp-enabled,
   .b-promo__slide_color08 {
     background-color: #ff2c1e; }
   .b-promo__slide_color09 {
-    background-color: #73a4ce; } }
+    background-color: #73a4ce; }
+  .b-promo__contacts .l-sub-title {
+    word-spacing: -2px; }
+  .b-promo__contacts .l-mail {
+    margin-bottom: 36px; } }
 
 @media (max-width: 767px) {
   body {
@@ -1591,21 +1625,43 @@ html.fp-enabled,
     min-width: 320px; }
   .b-header__awards {
     display: none; }
-  .b-header__title .title_middle {
-    font-size: 1em;
-    letter-spacing: 0.1875em;
-    word-spacing: 1px;
-    margin-bottom: 16px; }
-  .b-header__title .title_big {
-    font-size: 1.875em;
-    line-height: 1.1333333333333333em;
-    margin-bottom: 20px; }
-  .b-header__title .title_min {
-    font-size: 16px;
-    letter-spacing: 3px;
-    word-spacing: 1px; }
+  .b-header__title {
+    margin-bottom: 48px; }
+    .b-header__title .title_middle {
+      font-size: 22px;
+      letter-spacing: 3px;
+      word-spacing: 1px;
+      margin-bottom: 12px; }
+    .b-header__title .title_big {
+      font-size: 38px;
+      line-height: 34px;
+      margin-bottom: 16px;
+      letter-spacing: 3px;
+      word-spacing: 0px; }
+    .b-header__title .title_min {
+      font-size: 22px;
+      letter-spacing: 3px;
+      word-spacing: 1px; }
+  .b-promo__cols {
+    width: 80%;
+    padding-left: 8px; }
   .b-promo__col {
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 24px; }
+    .b-promo__col .lnk {
+      padding: 0; }
+    .b-promo__col .num {
+      font-size: 76px;
+      line-height: 44px; }
+      .b-promo__col .num:before {
+        display: none; }
+    .b-promo__col .sub-title {
+      font-size: 26px;
+      line-height: 22px;
+      letter-spacing: 2px;
+      word-spacing: -1px;
+      margin-left: 60px;
+      width: 80%; }
   .b-promo__slide {
     width: 100%;
     max-width: none;
@@ -1624,6 +1680,8 @@ html.fp-enabled,
       text-align: center; }
       .b-promo__slide .l-logo img {
         vertical-align: middle; }
+      .b-promo__slide .l-logo.l-logo_hide {
+        display: block; }
   .b-promo__slide-lnk {
     width: 100%; }
   .b-promo__slide_color01 {
@@ -1643,7 +1701,33 @@ html.fp-enabled,
   .b-promo__slide_color08 {
     background-color: #ff2c1e; }
   .b-promo__slide_color09 {
-    background-color: #73a4ce; } }
+    background-color: #73a4ce; }
+  .b-promo__contacts .l-sub-title {
+    font-size: 20px;
+    letter-spacing: 5px;
+    word-spacing: -3px;
+    margin-bottom: 12px; }
+  .b-promo__contacts .l-phone {
+    font-size: 54px;
+    letter-spacing: 5px;
+    word-spacing: -4px;
+    margin-bottom: 12px; }
+  .b-promo__contacts .l-mail {
+    margin-bottom: 32px; }
+    .b-promo__contacts .l-mail a {
+      font-size: 36px;
+      line-height: 22px;
+      letter-spacing: 3.5px; }
+  .b-contacts__popup {
+    padding: 34px 20px;
+    width: 100%; }
+    .b-contacts__popup .b-form-call {
+      min-width: 294px;
+      width: 100%;
+      max-width: 536px;
+      margin: 0px auto; }
+  .b-form__file-title {
+    font-size: 15px; } }
 
 #wrapper {
   overflow: hidden; }

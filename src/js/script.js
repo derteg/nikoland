@@ -52,11 +52,12 @@ jQuery(function($){
 
 		$(window).on('load resize', function(event){
 			var wW = $(this).width(),
-				$slideW = $('.slick-slide', $promoSlider).width();
+				$slide = $('.b-promo__slide', $promoSlider);
 
 			if(event.type == 'resize'){
 				toggleSlick();
 			}
+
 
 			if(wW >= maxWidth){
 				$linkCont.height(406).width(406);
@@ -70,6 +71,10 @@ jQuery(function($){
 					'height': 198,
 					'width': '100%'
 				});
+
+				if($slide.length%2 === 1){
+					$slide.last().addClass('full-width');
+				}
 			}
 		});
 		

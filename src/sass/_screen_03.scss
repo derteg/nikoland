@@ -22,24 +22,24 @@
 	display: none;
 	.l-sub-title{
 		font-family: $bebasRegular;
-		font-size: 1.5em;
 		font-weight: normal;
-		letter-spacing: 0.23em;
-		margin-bottom: 18px;
+		font-size: 24px;
+		letter-spacing: 6px;
+		margin-bottom: 6px;
 	}
 	.l-phone{
-		margin: 10px 0 12px;
 		color: #fff;
 		font-family: $bebasBold;
-		font-size: 5.1875em;
-		letter-spacing: 0.07em;
+		font-size: 83px;
+		letter-spacing: 6px;
+		margin-bottom: 8px;
 	}
 	.l-mail{
 		margin-bottom: 30px;
 		a{
-			font-size: 2.15em;
-			letter-spacing: 0.1em;
-			line-height: 0.65em;
+			font-size: 34px;
+			line-height: 24px;
+			letter-spacing: 3px;
 			display: inline-block;
 			color: #fff;
 			font-family: $bebasRegular;
@@ -49,12 +49,12 @@
 }
 .l-form__btn{
 	display: inline-block;
-	padding: 12px 34px 11px;
+	padding: 10px 34px 8px;
 	border: none;	
 	outline: none;
-	font-size: 1.7em;
 	text-transform: uppercase;
-	letter-spacing: 0.17em;
+	font-size: 27px;
+	letter-spacing: 5px;
 	box-sizing: border-box;
 	cursor: pointer;
 	font-family: 'bebas_neue_regularregular', sans-serif;

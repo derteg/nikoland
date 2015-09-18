@@ -30,8 +30,8 @@
 	max-height: 650px;
 	margin: 0;
 	position: relative;
-	-webkit-transform: translateY(100%);
-	transform: translateY(100%);
+	-webkit-transform: translateY(100%) translateZ(0);
+	transform: translateY(100%) translateZ(0);
 	-webkit-transition-delay: 0;
 	transition-delay: 0;
 	@include transition(transform ease(in-out-expo));
@@ -40,21 +40,18 @@
 		height: auto;
 		-webkit-box-shadow: 0px 0px 25px 5px rgba(0,0,0,0);
 		box-shadow: 0px 0px 25px 5px rgba(0,0,0,0);
-		-webkit-transform: scale(1);
-		transform: scale(1);
+		-webkit-transform: scale(1) translateZ(0);
+		transform: scale(1) translateZ(0);
 		@include transition(transform 2s ease(out-circ), box-shadow 1s ease(out-circ));
 	}
 	&:hover{
 		z-index: 2;
-		.b-pic-bg__cont{
-			z-index: 2;			
-		}
 		.l-pic-bg{
 			-webkit-box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.75);
 			-moz-box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.75);
 			box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.75);
-			-webkit-transform: scale(1.05);
-			transform: scale(1.05);
+			-webkit-transform: scale(1.05) translateZ(0);
+			transform: scale(1.05) translateZ(0);
 		}
 		.b-promo__slide-lnk{
 			z-index: 4;
@@ -66,6 +63,9 @@
 		position: absolute;
 		top: 20px;
 		left: 20px;
+		&.l-logo_hide{
+			display: none;
+		}
 	}
 	.l-title{
 		position: absolute;
