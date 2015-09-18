@@ -44,7 +44,8 @@
 		transform: scale(1);
 		@include transition(transform 2s ease(out-circ), box-shadow 1s ease(out-circ));
 	}
-	&:hover{
+	&:hover,
+	&:focus{
 		z-index: 2;
 		.b-pic-bg__cont{
 			z-index: 2;			
