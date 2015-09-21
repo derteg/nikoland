@@ -6,12 +6,11 @@ jQuery(function($){
 		var $promoSlider = $('#promoSlider'),
 			$picCont = $('.b-pic-bg__cont', $promoSlider),
 			$linkCont = $('.js-promo__slide-lnk', $promoSlider),
-			win = $(window),
+			widthScreen = $(window).width(), 
 			delay = 0.25,
 			duration = 0.5,
 			resizeId,
 			maxWidth = 1024,
-			toggleSlick,
 			slickVar = {
 				infinite: false,
 				slidesToShow: 3,
@@ -22,61 +21,48 @@ jQuery(function($){
 				arrows: false,
 				lazyLoad: 'progressive',
 				speed: 700, 
-				cssEase: 'cubic-bezier(0.55, 0.085, 0.68, 0.53)',
-				responsive: [
-					{
-						breakpoint: maxWidth,
-						settings: 'unslick'
+				cssEase: 'cubic-bezier(0.55, 0.085, 0.68, 0.53)'
+			};
+
+
+			function toggleSlick($widthScreen){
+				var $slide = $('.b-promo__slide', $promoSlider);
+
+				if($widthScreen >= maxWidth){
+					if(!$promoSlider.hasClass('slick-initialized')){
+						$promoSlider.slick(slickVar);
 					}
-				]
-			},
-			runSlick = function(){
-				$promoSlider.slick(slickVar);
-			};
 
-
-			toggleSlick = function(){
-				var wW = $(window).width();
-
-				if(wW >= maxWidth){
-					runSlick();
-					// $.fn.fullpage.reBuild();
-					$.fn.fullpage.setAutoScrolling(true);
+					var $slideW = $slide.width();
+					$linkCont.width($slideW).height($slideW);
+					$picCont.width($slideW).height($slideW);
 				} else {
-					// $.fn.fullpage.reBuild();
-					$.fn.fullpage.setAutoScrolling(false);
-				}
-			};
+					if($promoSlider.hasClass('slick-initialized')) {
+						$promoSlider.slick("unslick");
+					}
 
-		runSlick();
+					$linkCont.css({
+						'height': 198,
+						'width': '100%'
+					});
+					$picCont.css({
+						'height': 198,
+						'width': '100%'
+					});
 
-		$(window).on('load resize', function(event){
-			var wW = $(this).width(),
-				$slide = $('.b-promo__slide', $promoSlider);
-
-			if(event.type == 'resize'){
-				toggleSlick();
-			}
-
-
-			if(wW >= maxWidth){
-				$linkCont.height(406).width(406);
-				$picCont.height(406).width(406);
-			} else {
-				$linkCont.css({
-					'height': 198,
-					'width': '100%'
-				});
-				$picCont.css({
-					'height': 198,
-					'width': '100%'
-				});
-
-				if($slide.length%2 === 1){
-					$slide.last().addClass('full-width');
+					if($slide.length%2 === 1){
+						$slide.last().addClass('full-width');
+					}
 				}
 			}
-		});
+
+		
+		$(window)
+			.ready(toggleSlick(widthScreen))
+			.resize(function(){
+				var widthScreen = $(window).width();
+				toggleSlick(widthScreen);
+			});
 		
 		
 		$promoSlider.on('afterChange', sliderPicsAnimate);
@@ -119,8 +105,7 @@ jQuery(function($){
 			fitToSectionDelay: 0,
 			normalScrollElements: '.b-contacts__popup, .b-about',
 			fixedElements: '.b-video__cont',
-			anchors:['slide_01', 'slide_02', 'slide_03'],
-			responsiveWidth: '768',
+			responsiveWidth: '1000',
 			afterRender: function(){
 				$('#bgvid').get(0).play();
 
