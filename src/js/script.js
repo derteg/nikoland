@@ -10,7 +10,7 @@ jQuery(function($){
 			delay = 0.25,
 			duration = 0.5,
 			resizeId,
-			maxWidth = 1024,
+			maxWidth = 1000,
 			slickVar = {
 				infinite: false,
 				slidesToShow: 3,
@@ -105,7 +105,8 @@ jQuery(function($){
 			fitToSectionDelay: 0,
 			normalScrollElements: '.b-contacts__popup, .b-about',
 			fixedElements: '.b-video__cont',
-			responsiveWidth: '1000', 
+			responsiveWidth: '1000',
+			scrollOverflow: true,
 			afterRender: function(){
 				$('#bgvid').get(0).play();
 
@@ -207,16 +208,6 @@ jQuery(function($){
 						$contact.fadeOut(1200);
 					}
 			},
-			afterResize: function(){
-				var pluginContainer = $(this),
-					pluginContainerW  = pluginContainer.width();
-
-				// if(pluginContainerW >= 1000){
-				// 	pluginContainer.reBuild();
-				// } else {
-				// 	$.fn.fullpage.destroy();
-				// }
-			}
 		});
 
 		function setTranzishnBG(e){
@@ -230,7 +221,7 @@ jQuery(function($){
 					"-moz-transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)",
 					"-o-transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)",
 					"transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)"
-				});		
+				});
 		}
 	}(jQuery));
 
