@@ -82,13 +82,13 @@ a{text-decoration: none;color: $white;}
 
 
 /* Clearfix */
-.clearfix, .wrapper, .wrapper-contacts {
+.clearfix, {
   *zoom: 1;
 }
-.clearfix:before, .clearfix:after, .wrapper:before, .wrapper:after, .wrapper-contacts:before, .wrapper-contacts:after {
+.clearfix:before, .clearfix:after {
   content: ''; display: table;
 }
-.clearfix:after, .wrapper:after, .wrapper-contacts:after {
+.clearfix:after{
   clear: both;
 }
 /* /Clearfix */

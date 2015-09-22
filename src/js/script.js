@@ -40,6 +40,8 @@ jQuery(function($){
 					$linkCont.width($slideW).height($slideW);
 					$picCont.width($slideW).height($slideW);
 				} else {
+					$(this).trigger('resize');
+
 					if($promoSlider.hasClass('slick-initialized')) {
 						$promoSlider.slick("unslick");
 					}
@@ -113,7 +115,7 @@ jQuery(function($){
 			afterRender: function(){
 				$('#bgvid').get(0).play();
 
-				$interactBG.prepend('<div class="interact-bg">');		
+				$interactBG.prepend('<div class="interact-bg">');
 			},
 			onLeave: function(index, nextIndex, direction){
 				var $bg = $('.interact-bg', $interactBG),
@@ -210,21 +212,7 @@ jQuery(function($){
 						});
 						$contact.fadeOut(1200);
 					}
-			},
-			// afterResize: function(){
-			// 	var pluginContainer = $(this),
-			// 		pluginContainerW = pluginContainer.width();
-
-			// 	if(pluginContainerW > 1000){
-			// 		if(!$('#fullpage').hasClass('fullpage-wrapper')){
-			// 			$.fn.fullpage.undestroy();
-			// 		}
-			// 	} else {
-			// 		if($('#fullpage').hasClass('fullpage-wrapper')){
-			// 			$.fn.fullpage.destroy();
-			// 		}
-			// 	}
-			// }
+			}
 		});
 
 		function setTranzishnBG(e){
