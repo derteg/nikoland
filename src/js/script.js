@@ -121,7 +121,9 @@ jQuery(function($){
 				$(window).trigger('resize');
 
 				if($(window).width < 1000){
-					$.fn.fullpage.fitToSection = false; 
+					$.fn.fullpage.fitToSection = false;
+				} else {
+					$.fn.fullpage.fitToSection = true;
 				}
 
 				$interactBG.prepend('<div class="interact-bg">');
@@ -224,6 +226,8 @@ jQuery(function($){
 			},
 			afterResize: function(){
 				if($(window).width < 1000){
+					$.fn.fullpage.fitToSection = false; 
+				} else { 
 					$.fn.fullpage.fitToSection = true; 
 				}
 			}
