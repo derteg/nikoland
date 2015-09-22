@@ -30,6 +30,11 @@
 	width: 100%;
 }
 
+.b-promo__slide{
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+
 .b-promo__slide_color01{background-color: #5ca026;}
 .b-promo__slide_color02{background-color: #193259;}
 .b-promo__slide_color03{background-color: #ff7c6d;}

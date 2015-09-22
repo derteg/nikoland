@@ -6,6 +6,7 @@ jQuery(function($){
 		var $promoSlider = $('#promoSlider'),
 			$picCont = $('.b-pic-bg__cont', $promoSlider),
 			$linkCont = $('.js-promo__slide-lnk', $promoSlider),
+			$fullpage = $('#fullpage'),
 			widthScreen = $(window).width(), 
 			delay = 0.25,
 			duration = 0.5,
@@ -32,6 +33,8 @@ jQuery(function($){
 					if(!$promoSlider.hasClass('slick-initialized')){
 						$promoSlider.slick(slickVar);
 					}
+
+					
 
 					var $slideW = $slide.width();
 					$linkCont.width($slideW).height($slideW);
@@ -106,7 +109,7 @@ jQuery(function($){
 			normalScrollElements: '.b-contacts__popup, .b-about',
 			fixedElements: '.b-video__cont',
 			responsiveWidth: '1000',
-			scrollOverflow: true,
+			touchSensitivity: 10,
 			afterRender: function(){
 				$('#bgvid').get(0).play();
 
@@ -208,6 +211,20 @@ jQuery(function($){
 						$contact.fadeOut(1200);
 					}
 			},
+			// afterResize: function(){
+			// 	var pluginContainer = $(this),
+			// 		pluginContainerW = pluginContainer.width();
+
+			// 	if(pluginContainerW > 1000){
+			// 		if(!$('#fullpage').hasClass('fullpage-wrapper')){
+			// 			$.fn.fullpage.undestroy();
+			// 		}
+			// 	} else {
+			// 		if($('#fullpage').hasClass('fullpage-wrapper')){
+			// 			$.fn.fullpage.destroy();
+			// 		}
+			// 	}
+			// }
 		});
 
 		function setTranzishnBG(e){

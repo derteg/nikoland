@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'bebas_neuebold';
-  src: local("bebas_neuebold"), url("../../fonts/bebasneue_bold-webfont.woff2") format("woff2"), url("../../fonts/bebasneue_bold-webfont.woff") format("woff"), url("../../fonts/bebasneue_bold-webfont.ttf") format("ttf"), url("../../fonts/bebasneue_bold-webfont.eot") format("eot");
+  src: local("bebas_neuebold"), url("../../fonts/bebasneue_bold-webfont.woff2") format("woff2"), url("../../fonts/bebasneue_bold-webfont.woff") format("woff"), url("../../fonts/bebasneue_bold-webfont.ttf") format("ttf");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'bebas_neue_regularregular';
-  src: local("bebas_neueregular"), url("../../fonts/bebasneue_regular-webfont.woff2") format("woff2"), url("../../fonts/bebasneue_regular-webfont.woff") format("woff"), url("../../fonts/bebasneue_regular-webfont.ttf") format("ttf"), url("../../fonts/bebasneue_regular-webfont.eot") format("eot");
+  src: local("bebas_neueregular"), url("../../fonts/bebasneue_regular-webfont.woff2") format("woff2"), url("../../fonts/bebasneue_regular-webfont.woff") format("woff"), url("../../fonts/bebasneue_regular-webfont.ttf") format("ttf");
   font-weight: normal;
   font-style: normal; }
 
@@ -748,9 +748,6 @@ a {
         background-size: 220px 172px;
         background-image: url("../ico/sprite@2x.png"); } }
 
-.screen_01 {
-  overflow: hidden; }
-
 .b-video__cont .darknes {
   content: "";
   position: absolute;
@@ -904,9 +901,6 @@ a {
   opacity: 1;
   -webkit-transform: translateY(0);
   transform: translateY(0); }
-
-.screen_02.active {
-  z-index: 1; }
 
 .b-promo__carousel {
   -webkit-transition: -webkit-transform 0.7s;
@@ -1571,7 +1565,9 @@ html.fp-enabled,
     width: 50%;
     float: left;
     max-width: none;
-    min-width: 0; }
+    min-width: 0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
     .b-promo__slide .b-pic-bg__cont {
       display: none; }
     .b-promo__slide:hover {
@@ -1682,6 +1678,9 @@ html.fp-enabled,
         display: block; }
   .b-promo__slide-lnk {
     width: 100%; }
+  .b-promo__slide {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
   .b-promo__slide_color01 {
     background-color: #5ca026; }
   .b-promo__slide_color02 {

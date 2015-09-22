@@ -3,6 +3,8 @@
 	float: left;
 	max-width: none;
 	min-width: 0;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
 	.b-pic-bg__cont{
 		display: none;
 	}

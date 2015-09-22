@@ -1,12 +1,3 @@
-.screen_02{
-	&.active{
-		z-index: 1;		
-	}
-	// &.translate3D{
-	// 	animation: fadeinout 2.1s ease(in-quad) alternate;
-	// }
-}
-
 .b-promo__carousel{
 	@include transition(transform .7s);
 	.slick-list{
