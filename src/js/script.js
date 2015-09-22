@@ -206,6 +206,16 @@ jQuery(function($){
 						});
 						$contact.fadeOut(1200);
 					}
+			},
+			afterResize: function(){
+				var pluginContainer = $(this),
+					pluginContainerW  = pluginContainer.width();
+
+				// if(pluginContainerW >= 1000){
+				// 	pluginContainer.reBuild();
+				// } else {
+				// 	$.fn.fullpage.destroy();
+				// }
 			}
 		});
 
