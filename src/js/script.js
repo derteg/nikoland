@@ -111,7 +111,6 @@ jQuery(function($){
 			css3: true,
 			easingcss3: 'ease-in',
 			scrollingSpeed: 700,
-			fitToSectionDelay: 0,
 			normalScrollElements: '.b-contacts__popup, .b-about, .js-logo__popup', 
 			fixedElements: '.b-video__cont',
 			responsiveWidth: '1000',
@@ -120,6 +119,10 @@ jQuery(function($){
 				$('#bgvid').get(0).play();
 
 				$(window).trigger('resize');
+
+				if($(window).width < 1000){
+					$.fn.fullpage.fitToSection = false; 
+				}
 
 				$interactBG.prepend('<div class="interact-bg">');
 			},
@@ -218,6 +221,11 @@ jQuery(function($){
 						});
 						$contact.fadeOut(1200);
 					}
+			},
+			afterResize: function(){
+				if($(window).width < 1000){
+					$.fn.fullpage.fitToSection = true; 
+				}
 			}
 		});
 

@@ -1,3 +1,8 @@
+.screen_02{
+	&.active{
+		z-index: 1;
+	}
+}
 .b-promo__carousel{
 	@include transition(transform .7s);
 	.slick-list{
@@ -8,7 +13,6 @@
 		outline: none;
 	}
 }
-
 
 .vertical-animate{
 	.b-promo__slide{
