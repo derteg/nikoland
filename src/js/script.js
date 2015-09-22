@@ -35,11 +35,10 @@ jQuery(function($){
 						$promoSlider.slick(slickVar);
 					}
 
-					if(event.type == 'load'){
-						var $slideW = $slide.width();
-						$linkCont.width($slideW).height($slideW);
-						$picCont.width($slideW).height($slideW);
-					}
+					var $slideW = $slide.width();
+					
+					$linkCont.width($slideW).height($slideW);
+					$picCont.width($slideW).height($slideW);
 				} else {
 					if($promoSlider.hasClass('slick-initialized')) {
 						$promoSlider.slick("unslick");
@@ -132,7 +131,7 @@ jQuery(function($){
 					$awwards = $('#header').find('.js-header__awards'),
 					delay = 0.25,
 					duration = 0.5;
-
+ 
 				if(index == 1){
 					$promoSlider.addClass('vertical-animate');
 					
