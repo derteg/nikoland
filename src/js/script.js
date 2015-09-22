@@ -40,8 +40,6 @@ jQuery(function($){
 					$linkCont.width($slideW).height($slideW);
 					$picCont.width($slideW).height($slideW);
 				} else {
-					$(this).trigger('resize');
-
 					if($promoSlider.hasClass('slick-initialized')) {
 						$promoSlider.slick("unslick");
 					}
@@ -114,6 +112,8 @@ jQuery(function($){
 			touchSensitivity: 10,
 			afterRender: function(){
 				$('#bgvid').get(0).play();
+
+				$(window).trigger('resize');
 
 				$interactBG.prepend('<div class="interact-bg">');
 			},
