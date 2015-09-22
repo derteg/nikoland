@@ -759,16 +759,25 @@ a {
   height: auto;
   z-index: -100;
   -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  background: url(../pic/pic_27.jpg) no-repeat;
-  background-size: cover; }
+  transform: translateX(-50%) translateY(-50%); }
 
 .fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000;
+  background: #000 url(../pic/pic_27.jpg) center no-repeat;
   background-size: contain;
   object-fit: cover; }
+
+@media (min-aspect-ratio: 16/9) {
+  .b-promo_center {
+    padding: 40px 0; } }
+
+@media (max-aspect-ratio: 16/9) {
+  .b-promo_center {
+    padding: 40px 0; } }
 
 .b-promo_center {
   position: relative;
