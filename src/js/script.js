@@ -7,6 +7,7 @@ jQuery(function($){
 			$picCont = $('.b-pic-bg__cont', $promoSlider),
 			$linkCont = $('.js-promo__slide-lnk', $promoSlider),
 			$fullpage = $('#fullpage'),
+			isTouchDevice = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|Windows Phone|Tizen|Bada)/),
 			widthScreen = $(window).width(), 
 			delay = 0.25,
 			duration = 0.5,
@@ -34,8 +35,6 @@ jQuery(function($){
 						$promoSlider.slick(slickVar);
 					}
 
-					
-
 					var $slideW = $slide.width();
 					$linkCont.width($slideW).height($slideW);
 					$picCont.width($slideW).height($slideW);
@@ -55,6 +54,10 @@ jQuery(function($){
 
 					if($slide.length%2 === 1){
 						$slide.last().addClass('full-width');
+					}
+
+					if(!isTouchDevice){
+						$.fn.fullpage.reBuild();
 					}
 				}
 			}
