@@ -57,7 +57,7 @@ jQuery(function($){
 						$slide.last().addClass('full-width');
 					}
 
-					if( event.type == 'resize' && isTouchDevice ){
+					if( event.type == 'resize' && !isTouchDevice ){
 						$.fn.fullpage.reBuild();
 					}
 				}

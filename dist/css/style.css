@@ -759,17 +759,17 @@ a {
   height: auto;
   z-index: -100;
   -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%); }
+  transform: translateX(-50%) translateY(-50%);
+  background: #000 url(../pic/pic_27.jpg) center no-repeat;
+  background-size: contain;
+  object-fit: cover; }
 
 .fullscreen-bg__video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: #000 url(../pic/pic_27.jpg) center no-repeat;
-  background-size: contain;
-  object-fit: cover; }
+  height: 100%; }
 
 @media (min-aspect-ratio: 16/9) {
   .b-promo_center {
@@ -984,7 +984,8 @@ a {
   outline: none; }
 
 .screen_03 {
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: -1; }
 
 .interact-bg {
   background: transparent url("../pic/pic_01.jpg") 50% 50% no-repeat;
