@@ -553,6 +553,7 @@ a {
   right: 0;
   top: 0;
   z-index: 999999;
+  background-color: #000;
   -webkit-pointer-events: none;
   pointer-events: none;
   -webkit-user-select: none;
@@ -748,22 +749,6 @@ a {
         background-size: 220px 172px;
         background-image: url("../ico/sprite@2x.png"); } }
 
-.b-video__cont .darknes {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #000;
-  opacity: 0.4;
-  -webkit-transition: opacity 0.4s cubic-bezier(1, 0, 0, 1);
-  -moz-transition: opacity 0.4s cubic-bezier(1, 0, 0, 1);
-  -o-transition: opacity 0.4s cubic-bezier(1, 0, 0, 1);
-  transition: opacity 0.4s cubic-bezier(1, 0, 0, 1); }
-
 .b-video__cont {
   position: fixed;
   top: 50%;
@@ -780,7 +765,10 @@ a {
 
 .fullscreen-bg__video {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  background-color: #000;
+  background-size: contain;
+  object-fit: cover; }
 
 .b-promo_center {
   position: relative;
