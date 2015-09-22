@@ -105,8 +105,7 @@ jQuery(function($){
 			fitToSectionDelay: 0,
 			normalScrollElements: '.b-contacts__popup, .b-about',
 			fixedElements: '.b-video__cont',
-			responsiveWidth: '1000',
-			normalScrollElements: '.screen_02',
+			responsiveWidth: '1000', 
 			afterRender: function(){
 				$('#bgvid').get(0).play();
 
