@@ -106,7 +106,6 @@ jQuery(function($){
 			normalScrollElements: '.b-contacts__popup, .b-about',
 			fixedElements: '.b-video__cont',
 			responsiveWidth: '1000',
-			responsiveHeight: '1000',
 			afterRender: function(){
 				$('#bgvid').get(0).play();
 
