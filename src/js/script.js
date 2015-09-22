@@ -35,9 +35,11 @@ jQuery(function($){
 						$promoSlider.slick(slickVar);
 					}
 
-					var $slideW = $slide.width();
-					$linkCont.width($slideW).height($slideW);
-					$picCont.width($slideW).height($slideW);
+					if(event.type == 'load'){
+						var $slideW = $slide.width();
+						$linkCont.width($slideW).height($slideW);
+						$picCont.width($slideW).height($slideW);
+					}
 				} else {
 					if($promoSlider.hasClass('slick-initialized')) {
 						$promoSlider.slick("unslick");
@@ -64,8 +66,10 @@ jQuery(function($){
 
 		
 		$(window)
-			.ready(toggleSlick(widthScreen))
-			.resize(function(){
+			.load(function(event){
+				toggleSlick(widthScreen);
+			})
+			.resize(function(event){
 				var widthScreen = $(window).width();
 				toggleSlick(widthScreen);
 			});
@@ -109,7 +113,7 @@ jQuery(function($){
 			easingcss3: 'ease-in',
 			scrollingSpeed: 700,
 			fitToSectionDelay: 0,
-			normalScrollElements: '.b-contacts__popup, .b-about',
+			normalScrollElements: '.b-contacts__popup, .b-about, .js-logo__popup', 
 			fixedElements: '.b-video__cont',
 			responsiveWidth: '1000',
 			touchSensitivity: 10,
