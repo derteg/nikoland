@@ -8,11 +8,10 @@
 		<link href="favicon.ico" rel="icon" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="dist/css/style.css" media="screen">
 
-		<script src="bower_components/pace/pace.min.js" type="text/javascript" charset="utf-8" async defer></script>	
+		<script src="bower_components/pace/pace.min.js" type="text/javascript" charset="utf-8"></script>	
 
 		<script>
 		paceOptions = {
-		  // Configuration goes here. Example:
 		  elements: false,
 		  restartOnPushState: false,
 		  restartOnRequestAfter: false
@@ -22,228 +21,229 @@
 		<link rel="prefetch" href="dist/pic/pic_15.jpg">
 	</head>
 
-<body>
-	<div id="wrapper">
-		<header id="header" class="b-header">
-			<div class="b-logo" id="logo">
-				<div class="b-logo__pic js-logo__pic"></div>
+<body>			
+	<div id="fullpage">
+		<section class="section screen_01" data-anchor="slide_01">
+			<header id="header" class="b-header">
+				<div class="b-logo" id="logo">
+					<div class="b-logo__pic js-logo__pic"></div>
 
-				<div class="b-logo__close js-logo__close">
-					<span class="l-ico"></span>
-				</div>
+					<div class="b-logo__close js-logo__close">
+						<span class="l-ico"></span>
+					</div>
 
-				<div class="b-logo__popup js-logo__popup">
-					<div class="b-closer js-closer" data-popup-closer="">
-						<div class="b-closer__wrap" data-popup-closer="">
-							<span class="l-first"></span>
-							<span class="l-second"></span>
+					<div class="b-logo__popup js-logo__popup">
+						<div class="b-closer js-closer" data-popup-closer="">
+							<div class="b-closer__wrap" data-popup-closer="">
+								<span class="l-first"></span>
+								<span class="l-second"></span>
+							</div>
+						</div>
+						<div class="b-logo__popup-pic">
+							<img src="dist/ico/cont-logo.png" alt="">
+						</div>
+						<div class="b-logo__content">
+							<p class="l-sub-title">Стильные и качественные<br> DIGITAL проекты</p>
+							<p class="l-phone">8 495 772-32-16</p>
+							<p class="l-mail"><a class="lnk white lnk_brd" href="mailto:mail@nikoland.ru">mail@nikoland.ru</a></p>
+							<p class="l-adress">Москва, ул. Зорге 9-а</p>
+
+							<div class="b-social">
+								<a href="#0" class="l-social__lnk re"></a><a href="#0" class="l-social__lnk fb"></a>
+							</div>
 						</div>
 					</div>
-					<div class="b-logo__popup-pic">
-						<img src="dist/ico/cont-logo.png" alt="">
-					</div>
-					<div class="b-logo__content">
-						<p class="l-sub-title">Стильные и качественные<br> DIGITAL проекты</p>
-						<p class="l-phone">8 495 772-32-16</p>
-						<p class="l-mail"><a class="lnk white lnk_brd" href="mailto:mail@nikoland.ru">mail@nikoland.ru</a></p>
-						<p class="l-adress">Москва, ул. Зорге 9-а</p>
-
-						<div class="b-social">
-							<a href="#0" class="l-social__lnk re"></a><a href="#0" class="l-social__lnk fb"></a>
-						</div>
-					</div>
 				</div>
-			</div>
 
-			<div class="b-header__awards js-header__awards">
-				<a href="http://www.awwwards.com/best-websites/moscow-design-studio-nikoland/" target="_blank"><img src="dist/pic/pic_26.png" height="145" width="145" alt=""></a>
+				<div class="b-header__awards js-header__awards">
+					<a href="http://www.awwwards.com/best-websites/moscow-design-studio-nikoland/" target="_blank"><img src="dist/pic/pic_26.png" height="145" width="145" alt=""></a>
+				</div>
+			</header>
+			<!-- /header -->
+
+			<div class="b-video__cont">
+
+				<video autoplay="true" loop id="bgvid" class="fullscreen-bg__video mejs-player" tabindex="0" width="400" height="300">
+					<source src="video/video_01.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+					<source src="video/video_01.webm" type='video/webm; codecs="vp8, vorbis"'>
+				</video>
+				<div class="darknes"></div>
 			</div>
-		</header>
-		<!-- /header -->
+			<div class="b-promo_center">
+				<hgroup class="b-header__title js-header__title">
+					<h3 class="title_middle">Студия Nikoland</h3>
+					<h1 class="title_big js-about__page" data-href="ajax/about.html">Одна из сильнейших<br> дизайн-команд рунета</h1>
+					<h4 class="title_min">Работаем с 2009 года</h4>
+				</hgroup>
 		
-		<div id="fullpage">
-			<section class="section screen_01" data-anchor="slide_01">
-				<div class="b-video__cont">
-					<video autoplay loop id="bgvid" class="fullscreen-bg__video" tabindex="0">
-						<source src="video/video_01.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-						<source src="video/video_01.webm" type='video/webm; codecs="vp8, vorbis"'>
-					</video>
-					<div class="darknes"></div>
-				</div>
-				<div class="b-promo_center">
-					<hgroup class="b-header__title js-header__title">
-						<h3 class="title_middle">Студия Nikoland</h3>
-						<h1 class="title_big js-about__page" data-href="ajax/about.html">Одна из сильнейших<br> дизайн-команд рунета</h1>
-						<h4 class="title_min">Работаем с 2009 года</h4>
-					</hgroup>
-			
-					<div class="b-promo__cols cols">
-						<div class="b-promo__col b-promo__col_01 col--33 clearfix">
-							<a href="http://revision.ru/s/nikoland/" target="_blank" class="lnk">
-								<span class="num">02</span>
-								<p class="sub-title">Место среди студий на&nbsp;Revision.ru</p>
-							</a>
-						</div>
-						<div class="b-promo__col b-promo__col_02 col--33 clearfix">
-							<a href="http://2014.tagline.ru/design-studios-rating/" target="_blank" class="lnk">
-								<span class="num">15</span>
-								<p class="sub-title">Место в ТОП-100<br> tagline-2014</p>
-							</a>
-						</div>
-						<div class="b-promo__col b-promo__col_03 col--33 clearfix">
-							<a href="http://nikoland.ru/tinkoff" target="_blank" class="lnk">
-								<span class="num">01</span>
-								<p class="sub-title">золото на конкурсе russian digital games</p>
-							</a>
-						</div>
+				<div class="b-promo__cols cols">
+					<div class="b-promo__col b-promo__col_01 col--33 clearfix">
+						<a href="http://revision.ru/s/nikoland/" target="_blank" class="lnk">
+							<span class="num">02</span>
+							<p class="sub-title">Место среди студий на&nbsp;Revision.ru</p>
+						</a>
+					</div>
+					<div class="b-promo__col b-promo__col_02 col--33 clearfix">
+						<a href="http://2014.tagline.ru/design-studios-rating/" target="_blank" class="lnk">
+							<span class="num">15</span>
+							<p class="sub-title">Место в ТОП-100<br> tagline-2014</p>
+						</a>
+					</div>
+					<div class="b-promo__col b-promo__col_03 col--33 clearfix">
+						<a href="http://nikoland.ru/tinkoff" target="_blank" class="lnk">
+							<span class="num">01</span>
+							<p class="sub-title">золото на конкурсе russian digital games</p>
+						</a>
 					</div>
 				</div>
-			</section>
-			
-			<section class="section screen_02" data-anchor="slide_02">
-				<div class="wrapper">
-					<div class="b-promo__carousel" id="promoSlider">
-						<div class="b-promo__slide b-promo__slide_color01">
-							<div class="b-pic-bg__cont">
-								<img class="l-pic-bg" src="dist/pic/pic_02.jpg" alt="">
-							</div>
-							<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
-								<div class="l-logo"><img src="dist/pic/pic_15.png" alt=""></div>
-								<h4 class="l-title">Cервис емейл рассылок subscribe.ru</h4>
-							</a>
+			</div>
+		</section>
+		
+		<section class="section screen_02" data-anchor="slide_02">
+			<div class="wrapper">
+				<div class="b-promo__carousel" id="promoSlider">
+					<div class="b-promo__slide b-promo__slide_color01">
+						<div class="b-pic-bg__cont">
+							<img class="l-pic-bg" src="dist/pic/pic_02.jpg" alt="">
 						</div>
-						<div class="b-promo__slide b-promo__slide_color02">
-							<div class="b-pic-bg__cont">
-								<img class="l-pic-bg" src="dist/pic/pic_03.jpg" alt="">
-							</div>
-							<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
-								<div class="l-logo"><img src="dist/pic/pic_16.png" alt=""></div>
-								<h4 class="l-title">Системный интегратор tegrus</h4>
-							</a>
+						<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
+							<div class="l-logo"><img src="dist/pic/pic_15.png" alt=""></div>
+							<h4 class="l-title">Cервис емейл рассылок subscribe.ru</h4>
+						</a>
+					</div>
+					<div class="b-promo__slide b-promo__slide_color02">
+						<div class="b-pic-bg__cont">
+							<img class="l-pic-bg" src="dist/pic/pic_03.jpg" alt="">
 						</div>
-						<div class="b-promo__slide b-promo__slide_color03">
-							<div class="b-pic-bg__cont">
-								<img class="l-pic-bg" src="dist/pic/pic_04.jpg" alt="">
-							</div>
-							<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
-								<div class="l-logo"><img src="dist/pic/pic_17.png" alt=""></div>
-								<h4 class="l-title">Первая онлайн кондитерская mixville</h4>
-							</a>
+						<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
+							<div class="l-logo"><img src="dist/pic/pic_16.png" alt=""></div>
+							<h4 class="l-title">Системный интегратор tegrus</h4>
+						</a>
+					</div>
+					<div class="b-promo__slide b-promo__slide_color03">
+						<div class="b-pic-bg__cont">
+							<img class="l-pic-bg" src="dist/pic/pic_04.jpg" alt="">
 						</div>
-						<div class="b-promo__slide b-promo__slide_color04">
-							<div class="b-pic-bg__cont">
-								<img class="l-pic-bg" src="dist/pic/pic_05.jpg" alt="">
-							</div>
-							<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
-								<div class="l-logo l-logo_hide"><img src="dist/pic/pic_28.png" alt=""></div>
-								<h4 class="l-title">Базальтовый утеплитель hotrock</h4>
-							</a>
+						<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
+							<div class="l-logo"><img src="dist/pic/pic_17.png" alt=""></div>
+							<h4 class="l-title">Первая онлайн кондитерская mixville</h4>
+						</a>
+					</div>
+					<div class="b-promo__slide b-promo__slide_color04">
+						<div class="b-pic-bg__cont">
+							<img class="l-pic-bg" src="dist/pic/pic_05.jpg" alt="">
 						</div>
-						<div class="b-promo__slide b-promo__slide_color05">
-							<div class="b-pic-bg__cont">
-								<img class="l-pic-bg" src="dist/pic/pic_06.jpg" alt="">
-							</div>
-							<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
-								<div class="l-logo"><img src="dist/pic/pic_18.png" alt=""></div>
-								<h4 class="l-title">Itima. Заказная разработка crm</h4>
-							</a>
+						<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
+							<div class="l-logo l-logo_hide"><img src="dist/pic/pic_28.png" alt=""></div>
+							<h4 class="l-title">Базальтовый утеплитель hotrock</h4>
+						</a>
+					</div>
+					<div class="b-promo__slide b-promo__slide_color05">
+						<div class="b-pic-bg__cont">
+							<img class="l-pic-bg" src="dist/pic/pic_06.jpg" alt="">
 						</div>
-						<div class="b-promo__slide b-promo__slide_color06">
-							<div class="b-pic-bg__cont">
-								<img class="l-pic-bg" data-lazy="dist/pic/pic_07.jpg" alt="">
-							</div>
-							<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
-								<div class="l-logo"><img src="dist/pic/pic_19.png" alt=""></div>
-								<h4 class="l-title">Сервис увеличения конверсии</h4>
-							</a>
+						<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
+							<div class="l-logo"><img src="dist/pic/pic_18.png" alt=""></div>
+							<h4 class="l-title">Itima. Заказная разработка crm</h4>
+						</a>
+					</div>
+					<div class="b-promo__slide b-promo__slide_color06">
+						<div class="b-pic-bg__cont">
+							<img class="l-pic-bg" data-lazy="dist/pic/pic_07.jpg" alt="">
 						</div>
-						<div class="b-promo__slide b-promo__slide_color07">
-							<div class="b-pic-bg__cont">
-								<img class="l-pic-bg" data-lazy="dist/pic/pic_08.jpg" alt="">
-							</div>
-							<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
-								<div class="l-logo"><img src="dist/pic/pic_20.png" alt=""></div>
-								<h4 class="l-title">Золото на russian digital games 2014</h4>
-							</a>
+						<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
+							<div class="l-logo"><img src="dist/pic/pic_19.png" alt=""></div>
+							<h4 class="l-title">Сервис увеличения конверсии</h4>
+						</a>
+					</div>
+					<div class="b-promo__slide b-promo__slide_color07">
+						<div class="b-pic-bg__cont">
+							<img class="l-pic-bg" data-lazy="dist/pic/pic_08.jpg" alt="">
 						</div>
-						<div class="b-promo__slide b-promo__slide_color08">
-							<div class="b-pic-bg__cont">
-								<img class="l-pic-bg" data-lazy="dist/pic/pic_12.jpg" alt="">
-							</div>
-							<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
-								<div class="l-logo"><img src="dist/pic/pic_24.png" alt=""></div>
-								<h4 class="l-title">Русский Инвестиционный клуб</h4>
-							</a>
+						<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
+							<div class="l-logo"><img src="dist/pic/pic_20.png" alt=""></div>
+							<h4 class="l-title">Золото на russian digital games 2014</h4>
+						</a>
+					</div>
+					<div class="b-promo__slide b-promo__slide_color08">
+						<div class="b-pic-bg__cont">
+							<img class="l-pic-bg" data-lazy="dist/pic/pic_12.jpg" alt="">
 						</div>
-						<div class="b-promo__slide b-promo__slide_color09">
-							<div class="b-pic-bg__cont">
-								<img class="l-pic-bg" data-lazy="dist/pic/pic_13.jpg" alt="">
-							</div>
-							<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
-							<div class="l-logo l-logo_hide"><img src="dist/pic/pic_29.png" alt=""></div>
-								<h4 class="l-title">Иконки и иллюстрации</h4>
-							</a>
+						<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
+							<div class="l-logo"><img src="dist/pic/pic_24.png" alt=""></div>
+							<h4 class="l-title">Русский Инвестиционный клуб</h4>
+						</a>
+					</div>
+					<div class="b-promo__slide b-promo__slide_color09">
+						<div class="b-pic-bg__cont">
+							<img class="l-pic-bg" data-lazy="dist/pic/pic_13.jpg" alt="">
 						</div>
+						<a href="#0" class="b-promo__slide-lnk js-promo__slide-lnk">
+						<div class="l-logo l-logo_hide"><img src="dist/pic/pic_29.png" alt=""></div>
+							<h4 class="l-title">Иконки и иллюстрации</h4>
+						</a>
 					</div>
 				</div>
-			</section>
-			
-			<section class="section screen_03" data-anchor="slide_03" id="interactBG" data-ibg-bg="dist/pic/pic_01.jpg">
-				<div class="b-promo__contacts" id="promoContact">
-					<h3 class="l-sub-title">ПОМОЖЕМ ПОБОРОТЬ КРИЗИС</h3>
-					<p class="l-phone">8 495 772-32-16</p>
-					<p class="l-mail"><a class="lnk white lnk_brd" href="mailto:mail@nikoland.ru">mail@nikoland.ru</a></p>
-					<div class="l-form__btn l-form__btn_brd js-form-popup__btn"><span class="l-text">Отправить заявку</span></div>
-				</div>
+			</div>
+		</section>
+		
+		<section class="section screen_03" data-anchor="slide_03" id="interactBG" data-ibg-bg="dist/pic/pic_01.jpg">
+			<div class="interact-bg__wrap">
+				<div class="interact-bg"></div>
+			</div>
+			<div class="b-promo__contacts animated" id="promoContact">
+				<h3 class="l-sub-title">ПОМОЖЕМ ПОБОРОТЬ КРИЗИС</h3>
+				<p class="l-phone">8 495 772-32-16</p>
+				<p class="l-mail"><a class="lnk white lnk_brd" href="mailto:mail@nikoland.ru">mail@nikoland.ru</a></p>
+				<div class="l-form__btn l-form__btn_brd js-form-popup__btn"><span class="l-text">Отправить заявку</span></div>
+			</div>
 
-				<div class="b-contacts__popup">
-					<div class="b-contacts__popup-close"></div>
-					<form class="b-form-call" id="callbackFrom" action="order" method="POST" accept-charset="utf-8">
-						<h2 class="b-form-call__title">Форма заявки</h2>
-						<div class="b-form-call__cont">
-							<div class="b-form-call__row">
-								<div class="b-form-call__wrap">
-									<input class="l-form-call__inp" type="text" name="userName" value="" placeholder="Ваше имя">
+			<div class="b-contacts__popup">
+				<div class="b-contacts__popup-close"></div>
+				<form class="b-form-call" id="callbackFrom" action="order" method="POST" accept-charset="utf-8">
+					<h2 class="b-form-call__title">Форма заявки</h2>
+					<div class="b-form-call__cont">
+						<div class="b-form-call__row">
+							<div class="b-form-call__wrap">
+								<input class="l-form-call__inp" type="text" name="userName" value="" placeholder="Ваше имя">
+							</div>
+						</div>
+						<div class="b-form-call__row">
+							<div class="b-form-call__wrap">
+								<input class="l-form-call__inp" type="email" name="userEmail" value="" placeholder="Эл. почта">
+							</div>
+						</div>
+						<div class="b-form-call__row">
+							<div class="b-form-call__wrap">
+								<input id="contact-telephone" class="l-form-call__inp" type="text" name="userPhone" value="" placeholder="Телефон">
+							</div>
+						</div>
+						<div class="b-form-call__row">
+							<div class="b-form-call__wrap">
+								<textarea class="l-form-call_txtar" name="" placeholder="Текст сообщения"></textarea>
+							</div>
+						</div>
+						<div class="b-form-call__row">
+							<div class="b-form-call__wrap">
+								<div class="b-form__file">
+									<span class="b-form__file-title">Прикрепить файл (word, pdf, zip, jpg)</span>
+									<input id="fileupload" class="l-form-call__upload" type="file" ype here name="files[]" data-url="server/php/" multiple>
 								</div>
 							</div>
-							<div class="b-form-call__row">
+							<div id="fileupload__files" class="l-form-call__files"></div>
+						</div>
+						<div class="b-form-call__row">
+							<div class="b-form-call__cell b-form-call__cell_btn">
 								<div class="b-form-call__wrap">
-									<input class="l-form-call__inp" type="email" name="userEmail" value="" placeholder="Эл. почта">
-								</div>
-							</div>
-							<div class="b-form-call__row">
-								<div class="b-form-call__wrap">
-									<input id="contact-telephone" class="l-form-call__inp" type="number" name="userPhone" value="" placeholder="Телефон">
-								</div>
-							</div>
-							<div class="b-form-call__row">
-								<div class="b-form-call__wrap">
-									<textarea class="l-form-call_txtar" name="" placeholder="Текст сообщения"></textarea>
-								</div>
-							</div>
-							<div class="b-form-call__row">
-								<div class="b-form-call__wrap">
-									<div class="b-form__file">
-										<span class="b-form__file-title">Прикрепить файл (word, pdf, zip, jpg)</span>
-										<input id="fileupload" class="l-form-call__upload" type="file" ype here name="files[]" data-url="server/php/" multiple>
-									</div>
-								</div>
-								<div id="fileupload__files" class="l-form-call__files"></div>
-							</div>
-							<div class="b-form-call__row">
-								<div class="b-form-call__cell b-form-call__cell_btn">
-									<div class="b-form-call__wrap">
-										<button id="callSubmit" type="submit" value="submit" class="l-form__btn l-form__btn_brd js-form-call__btn">Отправить заявку</button>
-									</div>
+									<button id="callSubmit" type="submit" value="submit" class="l-form__btn l-form__btn_brd js-form-call__btn">Отправить заявку</button>
 								</div>
 							</div>
 						</div>
-					</form>
-				</div>
-			</section>
-		</div>
+					</div>
+				</form>
+			</div>
+		</section>
 	</div>
-	
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 
@@ -252,7 +252,8 @@
 	<script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
 
 	<script src="bower_components/slick-carousel/slick/slick.js" type="text/javascript"></script>
-	<script src="bower_components/Flowtype.js/flowtype.js" type="text/javascript"></script>
+
+	<script src="bower_components/mediaelement/build/mediaelement.js" type="text/javascript"></script>
 	
 	<script src="src/js/script.js" type="text/javascript" charset="utf-8"></script>
 

@@ -23,7 +23,16 @@ jQuery(function($){
 				arrows: false,
 				lazyLoad: 'progressive',
 				speed: 700, 
-				cssEase: 'cubic-bezier(0.55, 0.085, 0.68, 0.53)'
+				mobileFirst: true,
+				cssEase: 'cubic-bezier(0.55, 0.085, 0.68, 0.53)',
+				responsive: [
+				{
+					breakpoint: 1560,
+					settings: {
+						slidesToShow: 4
+					}
+				}
+				]
 			};
 
 
@@ -35,10 +44,10 @@ jQuery(function($){
 						$promoSlider.slick(slickVar);
 					}
 
-					var $slideW = $slide.width();
+					var $slideW = Math.round($('.slick-list').width()/3);
 					
-					$linkCont.width($slideW).height($slideW);
-					$picCont.width($slideW).height($slideW);
+					$linkCont.width($slideW).height($linkCont.width());
+					$picCont.width($slideW).height($picCont.width());
 				} else {
 					if($promoSlider.hasClass('slick-initialized')) {
 						$promoSlider.slick("unslick");
@@ -68,9 +77,10 @@ jQuery(function($){
 			.load(function(event){
 				toggleSlick(widthScreen);
 			})
-			.resize(function(event){
-				var widthScreen = $(window).width();
-				toggleSlick(widthScreen);
+			.resize(function() {
+				clearTimeout(resizeId);
+				var widthScreen = $(window).width();				
+				resizeId = setTimeout(toggleSlick(widthScreen), 100);
 			});
 		
 		
@@ -112,7 +122,7 @@ jQuery(function($){
 			easingcss3: 'ease-in',
 			scrollingSpeed: 700,
 			normalScrollElements: '.b-contacts__popup, .b-about, .js-logo__popup', 
-			fixedElements: '.b-video__cont',
+			fixedElements: '.b-video__cont, #header',
 			responsiveWidth: '1000',
 			touchSensitivity: 10,
 			afterRender: function(){
@@ -125,8 +135,6 @@ jQuery(function($){
 				} else {
 					$.fn.fullpage.fitToSection = true;
 				}
-
-				$interactBG.prepend('<div class="interact-bg">');
 			},
 			onLeave: function(index, nextIndex, direction){
 				var $bg = $('.interact-bg', $interactBG),
@@ -153,6 +161,7 @@ jQuery(function($){
 						'opacity': 0.8
 					});
 				}
+
 				if(nextIndex == 1){
 					$promoSlider.removeClass('vertical-animate');
 
@@ -168,6 +177,8 @@ jQuery(function($){
 					$('#bgvid').next().css({
 						'opacity': 0.4
 					});
+
+					$('.b-video__cont').find('.darknes').css('opacity', 0.3);
 				}
 
 				if(index == 2){
@@ -203,26 +214,31 @@ jQuery(function($){
 					});
 				}
 
-				if(nextIndex == 3){
+				if(index == 3){
+					$('.b-video__cont').find('.darknes').css('opacity', 0.8);
+
 					$bg.css({
-						"-webkit-transform": "translate3d(-70px, 0, 0) scale(1)",
-						"-moz-transform": "translate3d(-70px, 0, 0) scale(1)",
-						"-o-transform": "translate3d(-70px, 0, 0) scale(1)",
-						"transform": "translate3d(-70px, 0, 0) scale(1)"
+						"-webkit-transform": "translate3d(-70px, 0, 0) scale(1.3)",
+						"-moz-transform": "translate3d(-70px, 0, 0) scale(1.3)",
+						"-o-transform": "translate3d(-70px, 0, 0) scale(1.3)",
+						"transform": "translate3d(-70px, 0, 0) scale(1.3)"
+					});
+					$contact.addClass('fadeOutDown').removeClass('fadeInDown');
+				}
+
+				if(nextIndex == 3){
+					$('.b-video__cont').find('.darknes').css('opacity', 1);
+					$bg.css({
+						"-webkit-transform": "translate3d(-70px, 0, 200px) scale(1)",
+						"-moz-transform": "translate3d(-70px, 0, 200px) scale(1)",
+						"-o-transform": "translate3d(-70px, 0, 200px) scale(1)",
+						"transform": "translate3d(-70px, 0, 200px) scale(1)"
 					});
 
-					$contact.fadeIn(1200);
+					$contact.addClass('fadeInDown').removeClass('fadeOutDown');
 
 					$(document).mousemove(setTranzishnBG);
-					} else {
-						$bg.css({
-							"-webkit-transform": "translate3d(-70px, 0, 0) scale(1.3)",
-							"-moz-transform": "translate3d(-70px, 0, 0) scale(1.3)",
-							"-o-transform": "translate3d(-70px, 0, 0) scale(1.3)",
-							"transform": "translate3d(-70px, 0, 0) scale(1.3)"
-						});
-						$contact.fadeOut(1200);
-					}
+				}
 			},
 			afterResize: function(){
 				if($(window).width < 1000){
@@ -380,7 +396,6 @@ jQuery(function($){
 		}, "Невалидный телефон");
 
 		$.validator.addMethod("laxEmail", function(value, elem) {
-		  // allow any non-whitespace characters as the host part
 		  return this.optional( elem ) || /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@(?:\S{1,63})$/.test( value );
 		}, 'некорректный email');
 
@@ -436,7 +451,7 @@ jQuery(function($){
 				$form.validate().element($(e.target));
 			});
 
-			$('#contact-telephone').val('').mask("?(999) 999-9999");
+			$('#contact-telephone').mask("?(999) 999-9999");
 		})();
 
 

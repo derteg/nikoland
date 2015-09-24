@@ -384,6 +384,58 @@ th {
   100% {
     transform: translate3d(0, 0, 0) scale(0.9); } }
 
+.animated {
+  -webkit-animation-duration: .7s;
+  animation-duration: .7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-delay: .7s;
+  animation-delay: .7s; }
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); } }
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); } }
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown; }
+
 ::-moz-selection {
   background: #ecc02d;
   color: #000;
@@ -751,25 +803,44 @@ a {
 
 .b-video__cont {
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: -100;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  background: #000 url(../pic/pic_27.jpg) center no-repeat;
-  background-size: contain;
-  object-fit: cover; }
+  z-index: 1;
+  transform: translate3d(0, 0, 300px);
+  -webkit-transition: -webkit-transform 0.7s;
+  -moz-transition: -moz-transform 0.7s;
+  -o-transition: -o-transform 0.7s;
+  transition: transform 0.7s; }
+  .b-video__cont .darknes {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    opacity: .3;
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+    -webkit-transition: -webkit-filter 0.25s, opacity 0.35s;
+    -moz-transition: -webkit-filter 0.25s, opacity 0.35s;
+    -o-transition: -webkit-filter 0.25s, opacity 0.35s;
+    transition: -webkit-filter 0.25s, opacity 0.35s; }
 
 .fullscreen-bg__video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  background: #000 url(../pic/pic_27.jpg) center no-repeat;
+  background-size: cover;
+  object-fit: cover; }
 
 @media (min-aspect-ratio: 16/9) {
   .b-promo_center {
@@ -939,8 +1010,6 @@ a {
     height: auto;
     -webkit-box-shadow: 0px 0px 25px 5px transparent;
     box-shadow: 0px 0px 25px 5px transparent;
-    -webkit-transform: scale(1) translateZ(0);
-    transform: scale(1) translateZ(0);
     -webkit-transition: -webkit-transform 2s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     -moz-transition: -moz-transform 2s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     -o-transition: -o-transform 2s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -981,33 +1050,40 @@ a {
 .b-promo__slide-lnk {
   position: relative;
   display: block;
-  outline: none; }
+  outline: none;
+  max-width: 650px;
+  max-height: 650px; }
 
-.screen_03 {
+.interact-bg__wrap {
   overflow: hidden;
-  z-index: -1; }
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute; }
 
 .interact-bg {
-  background: transparent url("../pic/pic_01.jpg") 50% 50% no-repeat;
-  background-size: cover;
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 110%;
   height: 110%;
+  background: transparent url("../pic/pic_01.jpg") 50% 50% no-repeat;
+  background-size: cover;
   -webkit-transform: translate3d(-70px, 0, 0) scale(1.1);
   transform: translate3d(-70px, 0, 0) scale(1.1);
-  -webkit-transition: -webkit-transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition: -moz-transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -o-transition: -o-transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition: transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition: -webkit-transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: -moz-transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: -o-transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
 .b-promo__contacts {
   text-transform: uppercase;
   text-align: center;
   color: #fff;
-  position: relative;
-  display: none; }
+  position: relative; }
   .b-promo__contacts .l-sub-title {
     font-family: "bebas_neue_regularregular", sans-serif;
     font-weight: normal;

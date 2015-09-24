@@ -1,18 +1,24 @@
-.screen_03{
+.interact-bg__wrap{
 	overflow: hidden;
-	z-index: -1; 
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
 }
 .interact-bg{
-	background: transparent url('../pic/pic_01.jpg') 50% 50% no-repeat;
-	background-size: cover;
 	position: absolute;
 	top: 0;
 	left: 0;
+	right: 0;
+	bottom: 0;
 	width: 110%;
 	height: 110%;
+	background: transparent url('../pic/pic_01.jpg') 50% 50% no-repeat;
+	background-size: cover;
 	-webkit-transform: translate3d(-70px, 0, 0) scale(1.1);
 	transform: translate3d(-70px, 0, 0) scale(1.1);
-	@include transition (transform 2s ease(out-quad));
+	@include transition (transform 1.5s ease(out-quad));
 }
 
 .b-promo__contacts{
@@ -20,7 +26,6 @@
 	text-align: center;
 	color: #fff;
 	position: relative;
-	display: none;
 	.l-sub-title{
 		font-family: $bebasRegular;
 		font-weight: normal;
