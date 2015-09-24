@@ -229,11 +229,11 @@ jQuery(function($){
 				if(nextIndex == 3){
 					$('.b-video__cont').find('.darknes').css('opacity', 1);
 					$bg.css({
-						"-webkit-transform": "translate3d(-70px, 0, 200px) scale(1)",
-						"-moz-transform": "translate3d(-70px, 0, 200px) scale(1)",
-						"-o-transform": "translate3d(-70px, 0, 200px) scale(1)",
-						"transform": "translate3d(-70px, 0, 200px) scale(1)"
-					});
+						"-webkit-transform": "translate3d(-70px, 0, 0) scale(1)",
+						"-moz-transform": "translate3d(-70px, 0, 0) scale(1)",
+						"-o-transform": "translate3d(-70px, 0, 0) scale(1)",
+						"transform": "translate3d(-70px, 0, 0) scale(1)"
+					}); 
 
 					$contact.addClass('fadeInDown').removeClass('fadeOutDown');
 

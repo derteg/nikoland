@@ -1825,4 +1825,8 @@ html.fp-enabled,
   top: 0px;
   z-index: 300; }
 
+@media (max-width: 450px) {
+  .b-logo.active .b-logo__popup {
+    width: 100%; } }
+
 /*# sourceMappingURL=style.css.map */
