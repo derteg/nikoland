@@ -107,16 +107,14 @@
 .b-contacts__popup{
 	position: fixed;
 	top: 0;
-	right: 0;
 	z-index: 100;
 	overflow: auto;
 	height: 100%;
 	padding: 52px 34px;
+	right: -100%;
 	background: transparent url('../pic/pattern.jpg') left top repeat-y;
+	@include transition(right .8s ease(in-out-cubic));
 	box-sizing: border-box;
-	opacity: 0;
-	// -webkit-transform: translate3d(100%, 0, 0);
-	// transform: translate3d(100%, 0, 0); 
 }
 .b-contacts__popup-close{
 	position: absolute;

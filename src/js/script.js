@@ -268,7 +268,7 @@ jQuery(function($){
 			});
 
 			$popup.on('click', '.js-closer', function(event){
-				if(!event.target.hasAttribute('data-popup-closer')) return;
+				// if(!event.target.hasAttribute('data-popup-closer')) return;
 
 				$logo.removeClass('active');
 			});
@@ -284,13 +284,13 @@ jQuery(function($){
 
 			$btn.click(function(event){
 				event.preventDefault();
-				$popup.addClass('fadeInRight').removeClass('fadeOutRight');
+				$popup.css('right', 0);
 			});
 
 			$close.click(closePopUp);
 
 			function closePopUp(){
-				$popup.addClass('fadeOutRight').removeClass('fadeInRight');
+				$popup.css('right', '-100%');
 			}
 		}(jQuery));
 	}(jQuery));
