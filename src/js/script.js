@@ -56,7 +56,7 @@ jQuery(function($){
 						$promoSlider.slick("unslick");
 					}
 
-					$('.b-video__cont').height($('.screen_01').height());
+					// $('.b-video__cont').height($('.screen_01').height());
 
 					$linkCont.css({
 						'height': 198,
