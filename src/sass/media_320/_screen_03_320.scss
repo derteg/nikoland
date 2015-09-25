@@ -34,8 +34,10 @@
 	font-size: 15px;
 }
 .interact-bg{
-	width: 150%;
-	height: 110%;
+	width: 100%;
+	height: 100%;
+	-webkit-transform: translate3d(0px, 0, 0) !important;
+	transform: translate3d(0px, 0, 0) !important;
 }
 .l-form__btn{
 	padding: 10px 28px 8px;

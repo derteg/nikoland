@@ -1768,9 +1768,12 @@ html.fp-enabled,
     min-width: 320px; }
   .b-header__awards {
     display: none; }
-  .b-logo.active .b-logo__popup {
-    width: 100%;
-    height: 100%; }
+  .b-logo {
+    top: 8px;
+    left: 19px; }
+    .b-logo.active .b-logo__popup {
+      width: 100%;
+      height: 100%; }
   .b-header__title {
     margin-bottom: 48px; }
     .b-header__title .title_middle {
@@ -1889,8 +1892,10 @@ html.fp-enabled,
   .b-form__file-title {
     font-size: 15px; }
   .interact-bg {
-    width: 150%;
-    height: 110%; }
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translate3d(0px, 0, 0) !important;
+    transform: translate3d(0px, 0, 0) !important; }
   .l-form__btn {
     padding: 10px 28px 8px; }
   .b-about__btn {

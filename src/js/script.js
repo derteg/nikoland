@@ -44,6 +44,8 @@ jQuery(function($){
 						$promoSlider.slick(slickVar);
 					}
 
+					$('.b-video__cont').height('auto');
+
 					var $slideW = Math.round($('.slick-list').width()/3);
 					
 					$linkCont.width($slideW).height($linkCont.width());
@@ -52,6 +54,8 @@ jQuery(function($){
 					if($promoSlider.hasClass('slick-initialized')) {
 						$promoSlider.slick("unslick");
 					}
+
+					$('.b-video__cont').height($('.screen_01').height());
 
 					$linkCont.css({
 						'height': 198,
@@ -121,7 +125,7 @@ jQuery(function($){
 			css3: true,
 			easingcss3: 'ease-in',
 			scrollingSpeed: 700,
-			normalScrollElements: '.b-contacts__popup, .b-about, .js-logo__popup', 
+			normalScrollElements: '.b-contacts__popup, .b-about, #header', 
 			fixedElements: '.b-video__cont, #header, .b-contacts__popup',
 			responsiveWidth: '1000',
 			touchSensitivity: 10,
