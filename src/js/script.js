@@ -121,6 +121,14 @@ jQuery(function($){
 			currentMousePos = { x: -1, y: -1 },
 			$interactBG = $("#interactBG");
 
+		function disableSectionFit(){
+			if($(window).width < 1000){
+				$.fn.fullpage.setFitToSection(false);
+			} else {
+				$.fn.fullpage.setFitToSection(true);
+			}
+		}
+
 		$('#fullpage').fullpage({
 			verticalCentered: true,
 			css3: true,
@@ -135,13 +143,7 @@ jQuery(function($){
 
 				$(window).trigger('resize');
 
-				if($(window).width < 1000){
-					$.fn.fullpage.setFitToSection(false);
-					$.fn.fullpage.setAllowScrolling(false); 
-					$.fn.fullpage.setKeyboardScrolling(false);
-				} else {
-					$.fn.fullpage.fitToSection = true;
-				}
+				disableSectionFit();
 			},
 			onLeave: function(index, nextIndex, direction){
 				var $bg = $('.interact-bg', $interactBG),
@@ -238,13 +240,7 @@ jQuery(function($){
 				}
 			},
 			afterResize: function(){
-				if($(window).width < 1000){
-					$.fn.fullpage.setFitToSection(false);
-					$.fn.fullpage.setAllowScrolling(false);
-					$.fn.fullpage.setKeyboardScrolling(false); 
-				} else { 
-					$.fn.fullpage.fitToSection = true;
-				}
+				disableSectionFit();
 			}
 		});
 
