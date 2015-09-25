@@ -25,10 +25,9 @@
 	padding: 34px 20px;
 	width: 100%;
 	.b-form-call{
-		min-width: 294px;
+		min-width: 0;
 		width: 100%;
-		max-width: 536px;
-		margin: 0px auto;
+		max-width: none;
 	}
 }
 .b-form__file-title{
@@ -37,4 +36,7 @@
 .interact-bg{
 	width: 150%;
 	height: 110%;
+}
+.l-form__btn{
+	padding: 10px 28px 8px;
 }

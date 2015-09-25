@@ -122,7 +122,7 @@ jQuery(function($){
 			easingcss3: 'ease-in',
 			scrollingSpeed: 700,
 			normalScrollElements: '.b-contacts__popup, .b-about, .js-logo__popup', 
-			fixedElements: '.b-video__cont, #header',
+			fixedElements: '.b-video__cont, #header, .b-contacts__popup',
 			responsiveWidth: '1000',
 			touchSensitivity: 10,
 			afterRender: function(){

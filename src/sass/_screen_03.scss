@@ -105,10 +105,10 @@
 
 
 .b-contacts__popup{
-	position: absolute;
+	position: fixed;
 	right: -536px;
 	top: 0;
-	display: none;
+	z-index: 100;
 	overflow: auto;
 	height: 100%;
 	padding: 52px 34px;
@@ -122,7 +122,11 @@
 	right: 20px;
 	display: inline-block;
 	cursor: pointer;
-	@include sprite(ico_05);
+	background-image: url("../ico/sprite.png");
+	background-position: -172px -43px;
+	background-repeat: no-repeat;
+	width: 31px;
+	height: 36px;
 }
 .b-form-call__title{
 	color: $white;
@@ -183,6 +187,7 @@
 	position: relative;
 	text-align: center;
 	margin-bottom: 10px;
+	box-sizing: border-box;
 }
 .b-form__file-title{
 		position: absolute;
