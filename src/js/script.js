@@ -132,6 +132,8 @@ jQuery(function($){
 
 				if($(window).width < 1000){
 					$.fn.fullpage.fitToSection = false;
+					$.fn.fullpage.setAllowScrolling(false);
+					$.fn.fullpage.setKeyboardScrolling(false);
 				} else {
 					$.fn.fullpage.fitToSection = true;
 				}
@@ -231,6 +233,8 @@ jQuery(function($){
 			afterResize: function(){
 				if($(window).width < 1000){
 					$.fn.fullpage.fitToSection = false; 
+					$.fn.fullpage.setAllowScrolling(false);
+					$.fn.fullpage.setKeyboardScrolling(false); 
 				} else { 
 					$.fn.fullpage.fitToSection = true; 
 				}
@@ -276,30 +280,17 @@ jQuery(function($){
 		(function contactPopup(){
 			var $btn = $('.js-form-popup__btn'),
 				$popup = $('.b-contacts__popup'),
-				$close = $('.b-contacts__popup-close', $popup),
-				time = 600;
+				$close = $('.b-contacts__popup-close', $popup);
 
 			$btn.click(function(event){
 				event.preventDefault();
-				$popup
-				.show()
-				.animate({
-					'right': 0
-				}, time);
+				$popup.addClass('fadeInRight').removeClass('fadeOutRight');
 			});
 
 			$close.click(closePopUp);
 
 			function closePopUp(){
-				$popup
-					.animate({
-						'right': -536
-					}, time)
-					.queue(function(){
-
-						$(this).hide();
-						$(this).dequeue();
-					});
+				$popup.addClass('fadeOutRight').removeClass('fadeInRight');
 			}
 		}(jQuery));
 	}(jQuery));
