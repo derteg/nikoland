@@ -313,7 +313,7 @@ jQuery(function($){
 				$.ajax({
 					method: 'GET',
 					url: dataHref,
-					cache: false,
+					cache: true,
 					success: function(html){
 						$('#fullpage').before(html).css('display', 'none');
 						$('.b-about').css('height', wH);
