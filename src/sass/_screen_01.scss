@@ -7,7 +7,7 @@
 	width: auto;
 	height: auto;
 	z-index: 1;
-	transform: translate3d(0, 0, 300px);
+	transform: translate3d(0, 0, 0);
 	@include transition(transform .7s);
 	.darknes{
 		display: block;

@@ -16,8 +16,8 @@
 	height: 110%;
 	background: transparent url('../pic/pic_01.jpg') 50% 50% no-repeat;
 	background-size: cover;
-	-webkit-transform: translate3d(-70px, 0, 0) scale(1.1);
-	transform: translate3d(-70px, 0, 0) scale(1.1);
+	-webkit-transform: translate3d(-70px, 0, 0);
+	transform: translate3d(-70px, 0, 0);
 	@include transition (transform 1.5s ease(out-quad));
 }
 
@@ -71,12 +71,35 @@
 }
 .l-form__btn_brd{
 	color: $white;
-	border: $brd1;
+	border: 1px solid;
+	border-color: $white;
 	background-color: transparent;
+	position: relative;
+	@include transition(border-color .4s ease(out-quint), color .4s ease(out-quint));
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: $white;
+		z-index: -1;
+		opacity: 0;
+		-webkit-transform: scale3d(0.7, 1, 1);
+		transform: scale3d(0.7, 1, 1);
+		-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+		@include transition(transform .4s ease(out-quint), opacity .4s ease(out-quint));
+	}
 	&:hover,
 	&:focus{
 		color: $black;
-		background-color: $white;
+		border-color: $white;
+		&:before{
+			opacity: 1;
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
 	}
 }
 

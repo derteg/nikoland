@@ -217,23 +217,11 @@ jQuery(function($){
 				if(index == 3){
 					$('.b-video__cont').find('.darknes').css('opacity', 0.8);
 
-					$bg.css({
-						"-webkit-transform": "translate3d(-70px, 0, 0) scale(1.3)",
-						"-moz-transform": "translate3d(-70px, 0, 0) scale(1.3)",
-						"-o-transform": "translate3d(-70px, 0, 0) scale(1.3)",
-						"transform": "translate3d(-70px, 0, 0) scale(1.3)"
-					});
 					$contact.addClass('fadeOutDown').removeClass('fadeInDown');
 				}
 
 				if(nextIndex == 3){
 					$('.b-video__cont').find('.darknes').css('opacity', 1);
-					$bg.css({
-						"-webkit-transform": "translate3d(-70px, 0, 0) scale(1)",
-						"-moz-transform": "translate3d(-70px, 0, 0) scale(1)",
-						"-o-transform": "translate3d(-70px, 0, 0) scale(1)",
-						"transform": "translate3d(-70px, 0, 0) scale(1)"
-					}); 
 
 					$contact.addClass('fadeInDown').removeClass('fadeOutDown');
 
@@ -256,10 +244,10 @@ jQuery(function($){
 				currentMousePos.y = e.pageY / 10;
 				
 				$('.interact-bg').css({
-					"-webkit-transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)",
-					"-moz-transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)",
-					"-o-transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)",
-					"transform": "translate3d("+ -currentMousePos.x +"px,0, 0) scale(1)"
+					"-webkit-transform": "translate3d("+ -currentMousePos.x +"px,0, 0)",
+					"-moz-transform": "translate3d("+ -currentMousePos.x +"px,0, 0)",
+					"-o-transform": "translate3d("+ -currentMousePos.x +"px,0, 0)",
+					"transform": "translate3d("+ -currentMousePos.x +"px,0, 0)"
 				});
 		}
 	}(jQuery));

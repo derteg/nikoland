@@ -1,3 +1,8 @@
 .b-header__awards{
 	display: none;
 }
+.b-logo.active {
+	.b-logo__popup{
+		width: 100%;
+	}
+}

@@ -55,12 +55,3 @@ $sprite01: url('../ico/sprite_01.png');
 	top: 0px;
 	z-index: 300;
 }
-
-
-@media (max-width: 450px){
-	.b-logo.active {
-		.b-logo__popup{
-			width: 100%;
-		}
-	}
-}
