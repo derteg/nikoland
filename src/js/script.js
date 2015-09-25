@@ -44,6 +44,7 @@ jQuery(function($){
 						$promoSlider.slick(slickVar);
 					}
 
+					$('.b-logo__popup').height('auto');
 					$('.b-video__cont').height('auto');
 
 					var $slideW = Math.round($('.slick-list').width()/3);
@@ -125,7 +126,7 @@ jQuery(function($){
 			css3: true,
 			easingcss3: 'ease-in',
 			scrollingSpeed: 700,
-			normalScrollElements: '.b-contacts__popup, .b-about, #header', 
+			normalScrollElements: '.b-contacts__popup, .b-about, .b-logo__popup', 
 			fixedElements: '.b-video__cont, #header, .b-contacts__popup',
 			responsiveWidth: '1000',
 			touchSensitivity: 10,

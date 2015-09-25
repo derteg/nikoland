@@ -1737,7 +1737,8 @@ html.fp-enabled,
     .b-promo__slide.full-width {
       width: 100%; }
   .b-promo__slide-lnk {
-    width: 100%; }
+    width: 100%;
+    max-width: none; }
   .b-promo__slide_color01 {
     background-color: #5ca026; }
   .b-promo__slide_color02 {
@@ -1773,7 +1774,8 @@ html.fp-enabled,
     left: 19px; }
     .b-logo.active .b-logo__popup {
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      overflow: auto; }
   .b-header__title {
     margin-bottom: 48px; }
     .b-header__title .title_middle {
