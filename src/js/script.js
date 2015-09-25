@@ -232,7 +232,9 @@ jQuery(function($){
 
 					$contact.addClass('fadeInDown').removeClass('fadeOutDown');
 
-					$(document).mousemove(setTranzishnBG);
+					if($(window).width() >= 1000){
+						$(document).mousemove(setTranzishnBG);
+					}
 				}
 			},
 			afterResize: function(){
@@ -241,7 +243,7 @@ jQuery(function($){
 					$.fn.fullpage.setAllowScrolling(false);
 					$.fn.fullpage.setKeyboardScrolling(false); 
 				} else { 
-					$.fn.fullpage.fitToSection = true; 
+					$.fn.fullpage.fitToSection = true;
 				}
 			}
 		});

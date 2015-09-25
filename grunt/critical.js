@@ -2,8 +2,10 @@ module.exports = {
 	dist: {
 		options: {
 			base: './',
+			pathPrefix: ""
 		},
-		src: '*.html',
-		dest:  ''
+		files: [
+			{src: ['index.html'], dest: 'index-critical.html'}
+		]
 	}
 };
