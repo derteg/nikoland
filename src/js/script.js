@@ -135,9 +135,9 @@ jQuery(function($){
 
 				$(window).trigger('resize');
 
-				if($(window).width < 1000){			
-					$.fn.fullpage.setAutoScrolling(false);
-					$.fn.fullpage.setAllowScrolling(false);
+				if($(window).width < 1000){
+					$.fn.fullpage.setFitToSection(false);
+					$.fn.fullpage.setAllowScrolling(false); 
 					$.fn.fullpage.setKeyboardScrolling(false);
 				} else {
 					$.fn.fullpage.fitToSection = true;
@@ -239,7 +239,7 @@ jQuery(function($){
 			},
 			afterResize: function(){
 				if($(window).width < 1000){
-					$.fn.fullpage.setAutoScrolling(false);
+					$.fn.fullpage.setFitToSection(false);
 					$.fn.fullpage.setAllowScrolling(false);
 					$.fn.fullpage.setKeyboardScrolling(false); 
 				} else { 
